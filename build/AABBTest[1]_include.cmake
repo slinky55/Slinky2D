@@ -1,0 +1,5 @@
+if(EXISTS "/home/slinky/Slinky2D/build/AABBTest[1]_tests.cmake")
+  include("/home/slinky/Slinky2D/build/AABBTest[1]_tests.cmake")
+else()
+  add_test(AABBTest_NOT_BUILT AABBTest_NOT_BUILT)
+endif()

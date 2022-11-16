@@ -1,0 +1,1 @@
+/bin/x86_64-linux-gnu-g++ -g CMakeFiles/Test.dir/examples/test/main.cpp.o -o Test  -Wl,-rpath,/home/slinky/Slinky2D/build/3rdparty/sfml/lib libSlinky2D.a 3rdparty/sfml/lib/libsfml-graphics-d.so.3.0.0 3rdparty/sfml/lib/libsfml-window-d.so.3.0.0 3rdparty/sfml/lib/libsfml-system-d.so.3.0.0 

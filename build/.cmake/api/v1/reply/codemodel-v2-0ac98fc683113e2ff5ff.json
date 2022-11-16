@@ -1,0 +1,395 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"childIndexes" : 
+					[
+						1,
+						4
+					],
+					"hasInstallRule" : true,
+					"jsonFile" : "directory-.-Debug-f5ebdc15457944623624.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.15"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3
+					]
+				},
+				{
+					"build" : "_deps/googletest-build",
+					"childIndexes" : 
+					[
+						2
+					],
+					"hasInstallRule" : true,
+					"jsonFile" : "directory-_deps.googletest-build-Debug-325181791364522dc3de.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.5"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 1,
+					"source" : "build/_deps/googletest-src"
+				},
+				{
+					"build" : "_deps/googletest-build/googlemock",
+					"childIndexes" : 
+					[
+						3
+					],
+					"hasInstallRule" : true,
+					"jsonFile" : "directory-_deps.googletest-build.googlemock-Debug-f1438f02f1237c38b3f0.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.5"
+					},
+					"parentIndex" : 1,
+					"projectIndex" : 2,
+					"source" : "build/_deps/googletest-src/googlemock",
+					"targetIndexes" : 
+					[
+						4,
+						5
+					]
+				},
+				{
+					"build" : "_deps/googletest-build/googletest",
+					"hasInstallRule" : true,
+					"jsonFile" : "directory-_deps.googletest-build.googletest-Debug-d530649a2d6566d958b4.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.5"
+					},
+					"parentIndex" : 2,
+					"projectIndex" : 3,
+					"source" : "build/_deps/googletest-src/googletest",
+					"targetIndexes" : 
+					[
+						6,
+						7
+					]
+				},
+				{
+					"build" : "3rdparty/sfml",
+					"childIndexes" : 
+					[
+						5
+					],
+					"hasInstallRule" : true,
+					"jsonFile" : "directory-3rdparty.sfml-Debug-da80d7edf9e0dc192491.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.16"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 4,
+					"source" : "3rdparty/sfml"
+				},
+				{
+					"build" : "3rdparty/sfml/src/SFML",
+					"childIndexes" : 
+					[
+						6,
+						7,
+						8,
+						9,
+						10
+					],
+					"hasInstallRule" : true,
+					"jsonFile" : "directory-3rdparty.sfml.src.SFML-Debug-1072a1fcc6bcda6635a9.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.16"
+					},
+					"parentIndex" : 4,
+					"projectIndex" : 4,
+					"source" : "3rdparty/sfml/src/SFML"
+				},
+				{
+					"build" : "3rdparty/sfml/src/SFML/System",
+					"hasInstallRule" : true,
+					"jsonFile" : "directory-3rdparty.sfml.src.SFML.System-Debug-fc39ac5f0414008102ae.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.16"
+					},
+					"parentIndex" : 5,
+					"projectIndex" : 4,
+					"source" : "3rdparty/sfml/src/SFML/System",
+					"targetIndexes" : 
+					[
+						11
+					]
+				},
+				{
+					"build" : "3rdparty/sfml/src/SFML/Window",
+					"hasInstallRule" : true,
+					"jsonFile" : "directory-3rdparty.sfml.src.SFML.Window-Debug-cec18791eea201ae0082.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.16"
+					},
+					"parentIndex" : 5,
+					"projectIndex" : 4,
+					"source" : "3rdparty/sfml/src/SFML/Window",
+					"targetIndexes" : 
+					[
+						12
+					]
+				},
+				{
+					"build" : "3rdparty/sfml/src/SFML/Network",
+					"hasInstallRule" : true,
+					"jsonFile" : "directory-3rdparty.sfml.src.SFML.Network-Debug-fe37da5663648269e551.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.16"
+					},
+					"parentIndex" : 5,
+					"projectIndex" : 4,
+					"source" : "3rdparty/sfml/src/SFML/Network",
+					"targetIndexes" : 
+					[
+						10
+					]
+				},
+				{
+					"build" : "3rdparty/sfml/src/SFML/Graphics",
+					"hasInstallRule" : true,
+					"jsonFile" : "directory-3rdparty.sfml.src.SFML.Graphics-Debug-37bbe1bb53d24cfede20.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.16"
+					},
+					"parentIndex" : 5,
+					"projectIndex" : 4,
+					"source" : "3rdparty/sfml/src/SFML/Graphics",
+					"targetIndexes" : 
+					[
+						9
+					]
+				},
+				{
+					"build" : "3rdparty/sfml/src/SFML/Audio",
+					"hasInstallRule" : true,
+					"jsonFile" : "directory-3rdparty.sfml.src.SFML.Audio-Debug-7f17022a877934494d8f.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.16"
+					},
+					"parentIndex" : 5,
+					"projectIndex" : 4,
+					"source" : "3rdparty/sfml/src/SFML/Audio",
+					"targetIndexes" : 
+					[
+						8
+					]
+				}
+			],
+			"name" : "Debug",
+			"projects" : 
+			[
+				{
+					"childIndexes" : 
+					[
+						1,
+						4
+					],
+					"directoryIndexes" : 
+					[
+						0
+					],
+					"name" : "Slinky2D",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3
+					]
+				},
+				{
+					"childIndexes" : 
+					[
+						2
+					],
+					"directoryIndexes" : 
+					[
+						1
+					],
+					"name" : "googletest-distribution",
+					"parentIndex" : 0
+				},
+				{
+					"childIndexes" : 
+					[
+						3
+					],
+					"directoryIndexes" : 
+					[
+						2
+					],
+					"name" : "gmock",
+					"parentIndex" : 1,
+					"targetIndexes" : 
+					[
+						4,
+						5
+					]
+				},
+				{
+					"directoryIndexes" : 
+					[
+						3
+					],
+					"name" : "gtest",
+					"parentIndex" : 2,
+					"targetIndexes" : 
+					[
+						6,
+						7
+					]
+				},
+				{
+					"directoryIndexes" : 
+					[
+						4,
+						5,
+						6,
+						7,
+						8,
+						9,
+						10
+					],
+					"name" : "SFML",
+					"parentIndex" : 0,
+					"targetIndexes" : 
+					[
+						8,
+						9,
+						10,
+						11,
+						12
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 0,
+					"id" : "AABBTest::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-AABBTest-Debug-5f864695e984da167d5c.json",
+					"name" : "AABBTest",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "BoundingTest::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-BoundingTest-Debug-d91580e484b8fd309a38.json",
+					"name" : "BoundingTest",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "Slinky2D::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-Slinky2D-Debug-e673dcf3979af5fc1df4.json",
+					"name" : "Slinky2D",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "Test::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-Test-Debug-1ac068d592d7f3b2598d.json",
+					"name" : "Test",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 2,
+					"id" : "gmock::@0f7bb11d64f3678238c7",
+					"jsonFile" : "target-gmock-Debug-e0a58c5d7f2896dad1bd.json",
+					"name" : "gmock",
+					"projectIndex" : 2
+				},
+				{
+					"directoryIndex" : 2,
+					"id" : "gmock_main::@0f7bb11d64f3678238c7",
+					"jsonFile" : "target-gmock_main-Debug-dd8a8b2f699dacaaa988.json",
+					"name" : "gmock_main",
+					"projectIndex" : 2
+				},
+				{
+					"directoryIndex" : 3,
+					"id" : "gtest::@1ea2dfc0605fe3ab2a3f",
+					"jsonFile" : "target-gtest-Debug-348ca29d880875a34b4c.json",
+					"name" : "gtest",
+					"projectIndex" : 3
+				},
+				{
+					"directoryIndex" : 3,
+					"id" : "gtest_main::@1ea2dfc0605fe3ab2a3f",
+					"jsonFile" : "target-gtest_main-Debug-bfab172c8f92be0943c6.json",
+					"name" : "gtest_main",
+					"projectIndex" : 3
+				},
+				{
+					"directoryIndex" : 10,
+					"id" : "sfml-audio::@230bf371ec80154d0b29",
+					"jsonFile" : "target-sfml-audio-Debug-815e1f8341cf791bf9c4.json",
+					"name" : "sfml-audio",
+					"projectIndex" : 4
+				},
+				{
+					"directoryIndex" : 9,
+					"id" : "sfml-graphics::@4d270ef2af09ebfcfc98",
+					"jsonFile" : "target-sfml-graphics-Debug-08e6ce2946eeac53d795.json",
+					"name" : "sfml-graphics",
+					"projectIndex" : 4
+				},
+				{
+					"directoryIndex" : 8,
+					"id" : "sfml-network::@6ea79c91ce30353f3bdb",
+					"jsonFile" : "target-sfml-network-Debug-83b82ba2ad8d7052757e.json",
+					"name" : "sfml-network",
+					"projectIndex" : 4
+				},
+				{
+					"directoryIndex" : 6,
+					"id" : "sfml-system::@85bbaa4e5f2b91d1c03e",
+					"jsonFile" : "target-sfml-system-Debug-e33c19a43b20d282f60b.json",
+					"name" : "sfml-system",
+					"projectIndex" : 4
+				},
+				{
+					"directoryIndex" : 7,
+					"id" : "sfml-window::@aa7de7132628e290f203",
+					"jsonFile" : "target-sfml-window-Debug-8a4cb9a9f2d4292dd4f8.json",
+					"name" : "sfml-window",
+					"projectIndex" : 4
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "/home/slinky/Slinky2D/build",
+		"source" : "/home/slinky/Slinky2D"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 4
+	}
+}

@@ -1,0 +1,1004 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6"/>
+	<Project>
+		<Option title="SFML"/>
+		<Option makefile_is_custom="1"/>
+		<Option compiler="gcc"/>
+		<Option virtualFolders="CMake Files\;CMake Files\3rdparty\;CMake Files\3rdparty\sfml\;CMake Files\3rdparty\sfml\cmake\;CMake Files\3rdparty\sfml\cmake\Modules\;CMake Files\3rdparty\sfml\tools\;CMake Files\3rdparty\sfml\tools\pkg-config\;CMake Files\3rdparty\sfml\src\;CMake Files\3rdparty\sfml\src\SFML\;CMake Files\3rdparty\sfml\src\SFML\System\;CMake Files\3rdparty\sfml\src\SFML\Window\;CMake Files\3rdparty\sfml\src\SFML\Network\;CMake Files\3rdparty\sfml\src\SFML\Graphics\;CMake Files\3rdparty\sfml\src\SFML\Audio\;CMake Files\build\;CMake Files\build\_deps\;CMake Files\build\_deps\googletest-src\;CMake Files\build\_deps\googletest-src\googlemock\;CMake Files\build\_deps\googletest-src\googlemock\cmake\;CMake Files\build\_deps\googletest-src\googletest\;CMake Files\build\_deps\googletest-src\googletest\cmake\;"/>
+		<Build>
+			<Target title="all">
+				<Option working_dir="/home/slinky/Slinky2D/build/3rdparty/sfml"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/bin/make -f &quot;/home/slinky/Slinky2D/build/3rdparty/sfml/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="/bin/make -f &quot;/home/slinky/Slinky2D/build/3rdparty/sfml/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/bin/make -f &quot;/home/slinky/Slinky2D/build/3rdparty/sfml/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/bin/make -f &quot;/home/slinky/Slinky2D/build/3rdparty/sfml/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="sfml-system">
+				<Option output="/home/slinky/Slinky2D/build/3rdparty/sfml/lib/libsfml-system-d.so" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/slinky/Slinky2D/build/3rdparty/sfml/src/SFML/System"/>
+				<Option object_output="./"/>
+				<Option type="3"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/home/slinky/Slinky2D/3rdparty/sfml/include"/>
+					<Add directory="/home/slinky/Slinky2D/3rdparty/sfml/src"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/bin/make -f &quot;/home/slinky/Slinky2D/build/3rdparty/sfml/src/SFML/System/Makefile&quot;  VERBOSE=1 sfml-system"/>
+					<CompileFile command="/bin/make -f &quot;/home/slinky/Slinky2D/build/3rdparty/sfml/src/SFML/System/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/bin/make -f &quot;/home/slinky/Slinky2D/build/3rdparty/sfml/src/SFML/System/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/bin/make -f &quot;/home/slinky/Slinky2D/build/3rdparty/sfml/src/SFML/System/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="sfml-system/fast">
+				<Option output="/home/slinky/Slinky2D/build/3rdparty/sfml/lib/libsfml-system-d.so" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/slinky/Slinky2D/build/3rdparty/sfml/src/SFML/System"/>
+				<Option object_output="./"/>
+				<Option type="3"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/home/slinky/Slinky2D/3rdparty/sfml/include"/>
+					<Add directory="/home/slinky/Slinky2D/3rdparty/sfml/src"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/bin/make -f &quot;/home/slinky/Slinky2D/build/3rdparty/sfml/src/SFML/System/Makefile&quot;  VERBOSE=1 sfml-system/fast"/>
+					<CompileFile command="/bin/make -f &quot;/home/slinky/Slinky2D/build/3rdparty/sfml/src/SFML/System/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/bin/make -f &quot;/home/slinky/Slinky2D/build/3rdparty/sfml/src/SFML/System/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/bin/make -f &quot;/home/slinky/Slinky2D/build/3rdparty/sfml/src/SFML/System/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="sfml-window">
+				<Option output="/home/slinky/Slinky2D/build/3rdparty/sfml/lib/libsfml-window-d.so" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/slinky/Slinky2D/build/3rdparty/sfml/src/SFML/Window"/>
+				<Option object_output="./"/>
+				<Option type="3"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/home/slinky/Slinky2D/3rdparty/sfml/include"/>
+					<Add directory="/home/slinky/Slinky2D/3rdparty/sfml/src"/>
+					<Add directory="/home/slinky/Slinky2D/3rdparty/sfml/extlibs/headers/glad/include"/>
+					<Add directory="/home/slinky/Slinky2D/3rdparty/sfml/extlibs/headers/vulkan"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/bin/make -f &quot;/home/slinky/Slinky2D/build/3rdparty/sfml/src/SFML/Window/Makefile&quot;  VERBOSE=1 sfml-window"/>
+					<CompileFile command="/bin/make -f &quot;/home/slinky/Slinky2D/build/3rdparty/sfml/src/SFML/Window/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/bin/make -f &quot;/home/slinky/Slinky2D/build/3rdparty/sfml/src/SFML/Window/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/bin/make -f &quot;/home/slinky/Slinky2D/build/3rdparty/sfml/src/SFML/Window/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="sfml-window/fast">
+				<Option output="/home/slinky/Slinky2D/build/3rdparty/sfml/lib/libsfml-window-d.so" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/slinky/Slinky2D/build/3rdparty/sfml/src/SFML/Window"/>
+				<Option object_output="./"/>
+				<Option type="3"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/home/slinky/Slinky2D/3rdparty/sfml/include"/>
+					<Add directory="/home/slinky/Slinky2D/3rdparty/sfml/src"/>
+					<Add directory="/home/slinky/Slinky2D/3rdparty/sfml/extlibs/headers/glad/include"/>
+					<Add directory="/home/slinky/Slinky2D/3rdparty/sfml/extlibs/headers/vulkan"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/bin/make -f &quot;/home/slinky/Slinky2D/build/3rdparty/sfml/src/SFML/Window/Makefile&quot;  VERBOSE=1 sfml-window/fast"/>
+					<CompileFile command="/bin/make -f &quot;/home/slinky/Slinky2D/build/3rdparty/sfml/src/SFML/Window/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/bin/make -f &quot;/home/slinky/Slinky2D/build/3rdparty/sfml/src/SFML/Window/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/bin/make -f &quot;/home/slinky/Slinky2D/build/3rdparty/sfml/src/SFML/Window/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="sfml-network">
+				<Option output="/home/slinky/Slinky2D/build/3rdparty/sfml/lib/libsfml-network-d.so" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/slinky/Slinky2D/build/3rdparty/sfml/src/SFML/Network"/>
+				<Option object_output="./"/>
+				<Option type="3"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/home/slinky/Slinky2D/3rdparty/sfml/include"/>
+					<Add directory="/home/slinky/Slinky2D/3rdparty/sfml/src"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/bin/make -f &quot;/home/slinky/Slinky2D/build/3rdparty/sfml/src/SFML/Network/Makefile&quot;  VERBOSE=1 sfml-network"/>
+					<CompileFile command="/bin/make -f &quot;/home/slinky/Slinky2D/build/3rdparty/sfml/src/SFML/Network/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/bin/make -f &quot;/home/slinky/Slinky2D/build/3rdparty/sfml/src/SFML/Network/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/bin/make -f &quot;/home/slinky/Slinky2D/build/3rdparty/sfml/src/SFML/Network/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="sfml-network/fast">
+				<Option output="/home/slinky/Slinky2D/build/3rdparty/sfml/lib/libsfml-network-d.so" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/slinky/Slinky2D/build/3rdparty/sfml/src/SFML/Network"/>
+				<Option object_output="./"/>
+				<Option type="3"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/home/slinky/Slinky2D/3rdparty/sfml/include"/>
+					<Add directory="/home/slinky/Slinky2D/3rdparty/sfml/src"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/bin/make -f &quot;/home/slinky/Slinky2D/build/3rdparty/sfml/src/SFML/Network/Makefile&quot;  VERBOSE=1 sfml-network/fast"/>
+					<CompileFile command="/bin/make -f &quot;/home/slinky/Slinky2D/build/3rdparty/sfml/src/SFML/Network/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/bin/make -f &quot;/home/slinky/Slinky2D/build/3rdparty/sfml/src/SFML/Network/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/bin/make -f &quot;/home/slinky/Slinky2D/build/3rdparty/sfml/src/SFML/Network/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="sfml-graphics">
+				<Option output="/home/slinky/Slinky2D/build/3rdparty/sfml/lib/libsfml-graphics-d.so" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/slinky/Slinky2D/build/3rdparty/sfml/src/SFML/Graphics"/>
+				<Option object_output="./"/>
+				<Option type="3"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add option="-DSTBI_FAILURE_USERMSG"/>
+					<Add directory="/home/slinky/Slinky2D/3rdparty/sfml/include"/>
+					<Add directory="/home/slinky/Slinky2D/3rdparty/sfml/src"/>
+					<Add directory="/home/slinky/Slinky2D/3rdparty/sfml/extlibs/headers/stb_image"/>
+					<Add directory="/home/slinky/Slinky2D/3rdparty/sfml/extlibs/headers/glad/include"/>
+					<Add directory="/usr/include/freetype2"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/bin/make -f &quot;/home/slinky/Slinky2D/build/3rdparty/sfml/src/SFML/Graphics/Makefile&quot;  VERBOSE=1 sfml-graphics"/>
+					<CompileFile command="/bin/make -f &quot;/home/slinky/Slinky2D/build/3rdparty/sfml/src/SFML/Graphics/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/bin/make -f &quot;/home/slinky/Slinky2D/build/3rdparty/sfml/src/SFML/Graphics/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/bin/make -f &quot;/home/slinky/Slinky2D/build/3rdparty/sfml/src/SFML/Graphics/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="sfml-graphics/fast">
+				<Option output="/home/slinky/Slinky2D/build/3rdparty/sfml/lib/libsfml-graphics-d.so" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/slinky/Slinky2D/build/3rdparty/sfml/src/SFML/Graphics"/>
+				<Option object_output="./"/>
+				<Option type="3"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add option="-DSTBI_FAILURE_USERMSG"/>
+					<Add directory="/home/slinky/Slinky2D/3rdparty/sfml/include"/>
+					<Add directory="/home/slinky/Slinky2D/3rdparty/sfml/src"/>
+					<Add directory="/home/slinky/Slinky2D/3rdparty/sfml/extlibs/headers/stb_image"/>
+					<Add directory="/home/slinky/Slinky2D/3rdparty/sfml/extlibs/headers/glad/include"/>
+					<Add directory="/usr/include/freetype2"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/bin/make -f &quot;/home/slinky/Slinky2D/build/3rdparty/sfml/src/SFML/Graphics/Makefile&quot;  VERBOSE=1 sfml-graphics/fast"/>
+					<CompileFile command="/bin/make -f &quot;/home/slinky/Slinky2D/build/3rdparty/sfml/src/SFML/Graphics/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/bin/make -f &quot;/home/slinky/Slinky2D/build/3rdparty/sfml/src/SFML/Graphics/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/bin/make -f &quot;/home/slinky/Slinky2D/build/3rdparty/sfml/src/SFML/Graphics/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="sfml-audio">
+				<Option output="/home/slinky/Slinky2D/build/3rdparty/sfml/lib/libsfml-audio-d.so" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/slinky/Slinky2D/build/3rdparty/sfml/src/SFML/Audio"/>
+				<Option object_output="./"/>
+				<Option type="3"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add option="-DOV_EXCLUDE_STATIC_CALLBACKS"/>
+					<Add option="-DFLAC__NO_DLL"/>
+					<Add directory="/home/slinky/Slinky2D/3rdparty/sfml/include"/>
+					<Add directory="/home/slinky/Slinky2D/3rdparty/sfml/src"/>
+					<Add directory="/home/slinky/Slinky2D/3rdparty/sfml/extlibs/headers/minimp3"/>
+					<Add directory="/usr/include/AL"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/bin/make -f &quot;/home/slinky/Slinky2D/build/3rdparty/sfml/src/SFML/Audio/Makefile&quot;  VERBOSE=1 sfml-audio"/>
+					<CompileFile command="/bin/make -f &quot;/home/slinky/Slinky2D/build/3rdparty/sfml/src/SFML/Audio/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/bin/make -f &quot;/home/slinky/Slinky2D/build/3rdparty/sfml/src/SFML/Audio/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/bin/make -f &quot;/home/slinky/Slinky2D/build/3rdparty/sfml/src/SFML/Audio/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="sfml-audio/fast">
+				<Option output="/home/slinky/Slinky2D/build/3rdparty/sfml/lib/libsfml-audio-d.so" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/slinky/Slinky2D/build/3rdparty/sfml/src/SFML/Audio"/>
+				<Option object_output="./"/>
+				<Option type="3"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add option="-DOV_EXCLUDE_STATIC_CALLBACKS"/>
+					<Add option="-DFLAC__NO_DLL"/>
+					<Add directory="/home/slinky/Slinky2D/3rdparty/sfml/include"/>
+					<Add directory="/home/slinky/Slinky2D/3rdparty/sfml/src"/>
+					<Add directory="/home/slinky/Slinky2D/3rdparty/sfml/extlibs/headers/minimp3"/>
+					<Add directory="/usr/include/AL"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/bin/make -f &quot;/home/slinky/Slinky2D/build/3rdparty/sfml/src/SFML/Audio/Makefile&quot;  VERBOSE=1 sfml-audio/fast"/>
+					<CompileFile command="/bin/make -f &quot;/home/slinky/Slinky2D/build/3rdparty/sfml/src/SFML/Audio/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/bin/make -f &quot;/home/slinky/Slinky2D/build/3rdparty/sfml/src/SFML/Audio/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/bin/make -f &quot;/home/slinky/Slinky2D/build/3rdparty/sfml/src/SFML/Audio/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+		</Build>
+		<Unit filename="/home/slinky/Slinky2D/3rdparty/sfml/include/SFML/Audio/AlResource.hpp">
+			<Option target="sfml-audio"/>
+		</Unit>
+		<Unit filename="/home/slinky/Slinky2D/3rdparty/sfml/include/SFML/Audio/Export.hpp">
+			<Option target="sfml-audio"/>
+		</Unit>
+		<Unit filename="/home/slinky/Slinky2D/3rdparty/sfml/include/SFML/Audio/InputSoundFile.hpp">
+			<Option target="sfml-audio"/>
+		</Unit>
+		<Unit filename="/home/slinky/Slinky2D/3rdparty/sfml/include/SFML/Audio/Listener.hpp">
+			<Option target="sfml-audio"/>
+		</Unit>
+		<Unit filename="/home/slinky/Slinky2D/3rdparty/sfml/include/SFML/Audio/Music.hpp">
+			<Option target="sfml-audio"/>
+		</Unit>
+		<Unit filename="/home/slinky/Slinky2D/3rdparty/sfml/include/SFML/Audio/OutputSoundFile.hpp">
+			<Option target="sfml-audio"/>
+		</Unit>
+		<Unit filename="/home/slinky/Slinky2D/3rdparty/sfml/include/SFML/Audio/Sound.hpp">
+			<Option target="sfml-audio"/>
+		</Unit>
+		<Unit filename="/home/slinky/Slinky2D/3rdparty/sfml/include/SFML/Audio/SoundBuffer.hpp">
+			<Option target="sfml-audio"/>
+		</Unit>
+		<Unit filename="/home/slinky/Slinky2D/3rdparty/sfml/include/SFML/Audio/SoundBufferRecorder.hpp">
+			<Option target="sfml-audio"/>
+		</Unit>
+		<Unit filename="/home/slinky/Slinky2D/3rdparty/sfml/include/SFML/Audio/SoundFileFactory.hpp">
+			<Option target="sfml-audio"/>
+		</Unit>
+		<Unit filename="/home/slinky/Slinky2D/3rdparty/sfml/include/SFML/Audio/SoundFileFactory.inl">
+			<Option target="sfml-audio"/>
+		</Unit>
+		<Unit filename="/home/slinky/Slinky2D/3rdparty/sfml/include/SFML/Audio/SoundFileReader.hpp">
+			<Option target="sfml-audio"/>
+		</Unit>
+		<Unit filename="/home/slinky/Slinky2D/3rdparty/sfml/include/SFML/Audio/SoundFileWriter.hpp">
+			<Option target="sfml-audio"/>
+		</Unit>
+		<Unit filename="/home/slinky/Slinky2D/3rdparty/sfml/include/SFML/Audio/SoundRecorder.hpp">
+			<Option target="sfml-audio"/>
+		</Unit>
+		<Unit filename="/home/slinky/Slinky2D/3rdparty/sfml/include/SFML/Audio/SoundSource.hpp">
+			<Option target="sfml-audio"/>
+		</Unit>
+		<Unit filename="/home/slinky/Slinky2D/3rdparty/sfml/include/SFML/Audio/SoundStream.hpp">
+			<Option target="sfml-audio"/>
+		</Unit>
+		<Unit filename="/home/slinky/Slinky2D/3rdparty/sfml/include/SFML/Graphics/BlendMode.hpp">
+			<Option target="sfml-graphics"/>
+		</Unit>
+		<Unit filename="/home/slinky/Slinky2D/3rdparty/sfml/include/SFML/Graphics/CircleShape.hpp">
+			<Option target="sfml-graphics"/>
+		</Unit>
+		<Unit filename="/home/slinky/Slinky2D/3rdparty/sfml/include/SFML/Graphics/Color.hpp">
+			<Option target="sfml-graphics"/>
+		</Unit>
+		<Unit filename="/home/slinky/Slinky2D/3rdparty/sfml/include/SFML/Graphics/Color.inl">
+			<Option target="sfml-graphics"/>
+		</Unit>
+		<Unit filename="/home/slinky/Slinky2D/3rdparty/sfml/include/SFML/Graphics/ConvexShape.hpp">
+			<Option target="sfml-graphics"/>
+		</Unit>
+		<Unit filename="/home/slinky/Slinky2D/3rdparty/sfml/include/SFML/Graphics/Drawable.hpp">
+			<Option target="sfml-graphics"/>
+		</Unit>
+		<Unit filename="/home/slinky/Slinky2D/3rdparty/sfml/include/SFML/Graphics/Export.hpp">
+			<Option target="sfml-graphics"/>
+		</Unit>
+		<Unit filename="/home/slinky/Slinky2D/3rdparty/sfml/include/SFML/Graphics/Font.hpp">
+			<Option target="sfml-graphics"/>
+		</Unit>
+		<Unit filename="/home/slinky/Slinky2D/3rdparty/sfml/include/SFML/Graphics/Glsl.hpp">
+			<Option target="sfml-graphics"/>
+		</Unit>
+		<Unit filename="/home/slinky/Slinky2D/3rdparty/sfml/include/SFML/Graphics/Glsl.inl">
+			<Option target="sfml-graphics"/>
+		</Unit>
+		<Unit filename="/home/slinky/Slinky2D/3rdparty/sfml/include/SFML/Graphics/Glyph.hpp">
+			<Option target="sfml-graphics"/>
+		</Unit>
+		<Unit filename="/home/slinky/Slinky2D/3rdparty/sfml/include/SFML/Graphics/Image.hpp">
+			<Option target="sfml-graphics"/>
+		</Unit>
+		<Unit filename="/home/slinky/Slinky2D/3rdparty/sfml/include/SFML/Graphics/PrimitiveType.hpp">
+			<Option target="sfml-graphics"/>
+		</Unit>
+		<Unit filename="/home/slinky/Slinky2D/3rdparty/sfml/include/SFML/Graphics/Rect.hpp">
+			<Option target="sfml-graphics"/>
+		</Unit>
+		<Unit filename="/home/slinky/Slinky2D/3rdparty/sfml/include/SFML/Graphics/Rect.inl">
+			<Option target="sfml-graphics"/>
+		</Unit>
+		<Unit filename="/home/slinky/Slinky2D/3rdparty/sfml/include/SFML/Graphics/RectangleShape.hpp">
+			<Option target="sfml-graphics"/>
+		</Unit>
+		<Unit filename="/home/slinky/Slinky2D/3rdparty/sfml/include/SFML/Graphics/RenderStates.hpp">
+			<Option target="sfml-graphics"/>
+		</Unit>
+		<Unit filename="/home/slinky/Slinky2D/3rdparty/sfml/include/SFML/Graphics/RenderTarget.hpp">
+			<Option target="sfml-graphics"/>
+		</Unit>
+		<Unit filename="/home/slinky/Slinky2D/3rdparty/sfml/include/SFML/Graphics/RenderTexture.hpp">
+			<Option target="sfml-graphics"/>
+		</Unit>
+		<Unit filename="/home/slinky/Slinky2D/3rdparty/sfml/include/SFML/Graphics/RenderWindow.hpp">
+			<Option target="sfml-graphics"/>
+		</Unit>
+		<Unit filename="/home/slinky/Slinky2D/3rdparty/sfml/include/SFML/Graphics/Shader.hpp">
+			<Option target="sfml-graphics"/>
+		</Unit>
+		<Unit filename="/home/slinky/Slinky2D/3rdparty/sfml/include/SFML/Graphics/Shape.hpp">
+			<Option target="sfml-graphics"/>
+		</Unit>
+		<Unit filename="/home/slinky/Slinky2D/3rdparty/sfml/include/SFML/Graphics/Sprite.hpp">
+			<Option target="sfml-graphics"/>
+		</Unit>
+		<Unit filename="/home/slinky/Slinky2D/3rdparty/sfml/include/SFML/Graphics/Text.hpp">
+			<Option target="sfml-graphics"/>
+		</Unit>
+		<Unit filename="/home/slinky/Slinky2D/3rdparty/sfml/include/SFML/Graphics/Texture.hpp">
+			<Option target="sfml-graphics"/>
+		</Unit>
+		<Unit filename="/home/slinky/Slinky2D/3rdparty/sfml/include/SFML/Graphics/Transform.hpp">
+			<Option target="sfml-graphics"/>
+		</Unit>
+		<Unit filename="/home/slinky/Slinky2D/3rdparty/sfml/include/SFML/Graphics/Transform.inl">
+			<Option target="sfml-graphics"/>
+		</Unit>
+		<Unit filename="/home/slinky/Slinky2D/3rdparty/sfml/include/SFML/Graphics/Transformable.hpp">
+			<Option target="sfml-graphics"/>
+		</Unit>
+		<Unit filename="/home/slinky/Slinky2D/3rdparty/sfml/include/SFML/Graphics/Vertex.hpp">
+			<Option target="sfml-graphics"/>
+		</Unit>
+		<Unit filename="/home/slinky/Slinky2D/3rdparty/sfml/include/SFML/Graphics/Vertex.inl">
+			<Option target="sfml-graphics"/>
+		</Unit>
+		<Unit filename="/home/slinky/Slinky2D/3rdparty/sfml/include/SFML/Graphics/VertexArray.hpp">
+			<Option target="sfml-graphics"/>
+		</Unit>
+		<Unit filename="/home/slinky/Slinky2D/3rdparty/sfml/include/SFML/Graphics/VertexBuffer.hpp">
+			<Option target="sfml-graphics"/>
+		</Unit>
+		<Unit filename="/home/slinky/Slinky2D/3rdparty/sfml/include/SFML/Graphics/View.hpp">
+			<Option target="sfml-graphics"/>
+		</Unit>
+		<Unit filename="/home/slinky/Slinky2D/3rdparty/sfml/include/SFML/Network/Export.hpp">
+			<Option target="sfml-network"/>
+		</Unit>
+		<Unit filename="/home/slinky/Slinky2D/3rdparty/sfml/include/SFML/Network/Ftp.hpp">
+			<Option target="sfml-network"/>
+		</Unit>
+		<Unit filename="/home/slinky/Slinky2D/3rdparty/sfml/include/SFML/Network/Http.hpp">
+			<Option target="sfml-network"/>
+		</Unit>
+		<Unit filename="/home/slinky/Slinky2D/3rdparty/sfml/include/SFML/Network/IpAddress.hpp">
+			<Option target="sfml-network"/>
+		</Unit>
+		<Unit filename="/home/slinky/Slinky2D/3rdparty/sfml/include/SFML/Network/Packet.hpp">
+			<Option target="sfml-network"/>
+		</Unit>
+		<Unit filename="/home/slinky/Slinky2D/3rdparty/sfml/include/SFML/Network/Socket.hpp">
+			<Option target="sfml-network"/>
+		</Unit>
+		<Unit filename="/home/slinky/Slinky2D/3rdparty/sfml/include/SFML/Network/SocketHandle.hpp">
+			<Option target="sfml-network"/>
+		</Unit>
+		<Unit filename="/home/slinky/Slinky2D/3rdparty/sfml/include/SFML/Network/SocketSelector.hpp">
+			<Option target="sfml-network"/>
+		</Unit>
+		<Unit filename="/home/slinky/Slinky2D/3rdparty/sfml/include/SFML/Network/TcpListener.hpp">
+			<Option target="sfml-network"/>
+		</Unit>
+		<Unit filename="/home/slinky/Slinky2D/3rdparty/sfml/include/SFML/Network/TcpSocket.hpp">
+			<Option target="sfml-network"/>
+		</Unit>
+		<Unit filename="/home/slinky/Slinky2D/3rdparty/sfml/include/SFML/Network/UdpSocket.hpp">
+			<Option target="sfml-network"/>
+		</Unit>
+		<Unit filename="/home/slinky/Slinky2D/3rdparty/sfml/include/SFML/System/Angle.hpp">
+			<Option target="sfml-system"/>
+		</Unit>
+		<Unit filename="/home/slinky/Slinky2D/3rdparty/sfml/include/SFML/System/Angle.inl">
+			<Option target="sfml-system"/>
+		</Unit>
+		<Unit filename="/home/slinky/Slinky2D/3rdparty/sfml/include/SFML/System/Clock.hpp">
+			<Option target="sfml-system"/>
+		</Unit>
+		<Unit filename="/home/slinky/Slinky2D/3rdparty/sfml/include/SFML/System/Err.hpp">
+			<Option target="sfml-system"/>
+		</Unit>
+		<Unit filename="/home/slinky/Slinky2D/3rdparty/sfml/include/SFML/System/Export.hpp">
+			<Option target="sfml-system"/>
+		</Unit>
+		<Unit filename="/home/slinky/Slinky2D/3rdparty/sfml/include/SFML/System/FileInputStream.hpp">
+			<Option target="sfml-system"/>
+		</Unit>
+		<Unit filename="/home/slinky/Slinky2D/3rdparty/sfml/include/SFML/System/InputStream.hpp">
+			<Option target="sfml-system"/>
+		</Unit>
+		<Unit filename="/home/slinky/Slinky2D/3rdparty/sfml/include/SFML/System/MemoryInputStream.hpp">
+			<Option target="sfml-system"/>
+		</Unit>
+		<Unit filename="/home/slinky/Slinky2D/3rdparty/sfml/include/SFML/System/NativeActivity.hpp">
+			<Option target="sfml-system"/>
+		</Unit>
+		<Unit filename="/home/slinky/Slinky2D/3rdparty/sfml/include/SFML/System/Sleep.hpp">
+			<Option target="sfml-system"/>
+		</Unit>
+		<Unit filename="/home/slinky/Slinky2D/3rdparty/sfml/include/SFML/System/String.hpp">
+			<Option target="sfml-system"/>
+		</Unit>
+		<Unit filename="/home/slinky/Slinky2D/3rdparty/sfml/include/SFML/System/String.inl">
+			<Option target="sfml-system"/>
+		</Unit>
+		<Unit filename="/home/slinky/Slinky2D/3rdparty/sfml/include/SFML/System/SuspendAwareClock.hpp">
+			<Option target="sfml-system"/>
+		</Unit>
+		<Unit filename="/home/slinky/Slinky2D/3rdparty/sfml/include/SFML/System/Time.hpp">
+			<Option target="sfml-system"/>
+		</Unit>
+		<Unit filename="/home/slinky/Slinky2D/3rdparty/sfml/include/SFML/System/Time.inl">
+			<Option target="sfml-system"/>
+		</Unit>
+		<Unit filename="/home/slinky/Slinky2D/3rdparty/sfml/include/SFML/System/Utf.hpp">
+			<Option target="sfml-system"/>
+		</Unit>
+		<Unit filename="/home/slinky/Slinky2D/3rdparty/sfml/include/SFML/System/Utf.inl">
+			<Option target="sfml-system"/>
+		</Unit>
+		<Unit filename="/home/slinky/Slinky2D/3rdparty/sfml/include/SFML/System/Vector2.hpp">
+			<Option target="sfml-system"/>
+		</Unit>
+		<Unit filename="/home/slinky/Slinky2D/3rdparty/sfml/include/SFML/System/Vector2.inl">
+			<Option target="sfml-system"/>
+		</Unit>
+		<Unit filename="/home/slinky/Slinky2D/3rdparty/sfml/include/SFML/System/Vector3.hpp">
+			<Option target="sfml-system"/>
+		</Unit>
+		<Unit filename="/home/slinky/Slinky2D/3rdparty/sfml/include/SFML/System/Vector3.inl">
+			<Option target="sfml-system"/>
+		</Unit>
+		<Unit filename="/home/slinky/Slinky2D/3rdparty/sfml/include/SFML/Window/Clipboard.hpp">
+			<Option target="sfml-window"/>
+		</Unit>
+		<Unit filename="/home/slinky/Slinky2D/3rdparty/sfml/include/SFML/Window/Context.hpp">
+			<Option target="sfml-window"/>
+		</Unit>
+		<Unit filename="/home/slinky/Slinky2D/3rdparty/sfml/include/SFML/Window/ContextSettings.hpp">
+			<Option target="sfml-window"/>
+		</Unit>
+		<Unit filename="/home/slinky/Slinky2D/3rdparty/sfml/include/SFML/Window/Cursor.hpp">
+			<Option target="sfml-window"/>
+		</Unit>
+		<Unit filename="/home/slinky/Slinky2D/3rdparty/sfml/include/SFML/Window/Event.hpp">
+			<Option target="sfml-window"/>
+		</Unit>
+		<Unit filename="/home/slinky/Slinky2D/3rdparty/sfml/include/SFML/Window/Export.hpp">
+			<Option target="sfml-window"/>
+		</Unit>
+		<Unit filename="/home/slinky/Slinky2D/3rdparty/sfml/include/SFML/Window/GlResource.hpp">
+			<Option target="sfml-window"/>
+		</Unit>
+		<Unit filename="/home/slinky/Slinky2D/3rdparty/sfml/include/SFML/Window/Joystick.hpp">
+			<Option target="sfml-window"/>
+		</Unit>
+		<Unit filename="/home/slinky/Slinky2D/3rdparty/sfml/include/SFML/Window/Keyboard.hpp">
+			<Option target="sfml-window"/>
+		</Unit>
+		<Unit filename="/home/slinky/Slinky2D/3rdparty/sfml/include/SFML/Window/Mouse.hpp">
+			<Option target="sfml-window"/>
+		</Unit>
+		<Unit filename="/home/slinky/Slinky2D/3rdparty/sfml/include/SFML/Window/Sensor.hpp">
+			<Option target="sfml-window"/>
+		</Unit>
+		<Unit filename="/home/slinky/Slinky2D/3rdparty/sfml/include/SFML/Window/Touch.hpp">
+			<Option target="sfml-window"/>
+		</Unit>
+		<Unit filename="/home/slinky/Slinky2D/3rdparty/sfml/include/SFML/Window/VideoMode.hpp">
+			<Option target="sfml-window"/>
+		</Unit>
+		<Unit filename="/home/slinky/Slinky2D/3rdparty/sfml/include/SFML/Window/Vulkan.hpp">
+			<Option target="sfml-window"/>
+		</Unit>
+		<Unit filename="/home/slinky/Slinky2D/3rdparty/sfml/include/SFML/Window/Window.hpp">
+			<Option target="sfml-window"/>
+		</Unit>
+		<Unit filename="/home/slinky/Slinky2D/3rdparty/sfml/include/SFML/Window/WindowBase.hpp">
+			<Option target="sfml-window"/>
+		</Unit>
+		<Unit filename="/home/slinky/Slinky2D/3rdparty/sfml/include/SFML/Window/WindowHandle.hpp">
+			<Option target="sfml-window"/>
+		</Unit>
+		<Unit filename="/home/slinky/Slinky2D/3rdparty/sfml/include/SFML/Window/WindowStyle.hpp">
+			<Option target="sfml-window"/>
+		</Unit>
+		<Unit filename="/home/slinky/Slinky2D/3rdparty/sfml/src/SFML/Audio/ALCheck.cpp">
+			<Option target="sfml-audio"/>
+		</Unit>
+		<Unit filename="/home/slinky/Slinky2D/3rdparty/sfml/src/SFML/Audio/ALCheck.hpp">
+			<Option target="sfml-audio"/>
+		</Unit>
+		<Unit filename="/home/slinky/Slinky2D/3rdparty/sfml/src/SFML/Audio/AlResource.cpp">
+			<Option target="sfml-audio"/>
+		</Unit>
+		<Unit filename="/home/slinky/Slinky2D/3rdparty/sfml/src/SFML/Audio/AudioDevice.cpp">
+			<Option target="sfml-audio"/>
+		</Unit>
+		<Unit filename="/home/slinky/Slinky2D/3rdparty/sfml/src/SFML/Audio/AudioDevice.hpp">
+			<Option target="sfml-audio"/>
+		</Unit>
+		<Unit filename="/home/slinky/Slinky2D/3rdparty/sfml/src/SFML/Audio/InputSoundFile.cpp">
+			<Option target="sfml-audio"/>
+		</Unit>
+		<Unit filename="/home/slinky/Slinky2D/3rdparty/sfml/src/SFML/Audio/Listener.cpp">
+			<Option target="sfml-audio"/>
+		</Unit>
+		<Unit filename="/home/slinky/Slinky2D/3rdparty/sfml/src/SFML/Audio/Music.cpp">
+			<Option target="sfml-audio"/>
+		</Unit>
+		<Unit filename="/home/slinky/Slinky2D/3rdparty/sfml/src/SFML/Audio/OutputSoundFile.cpp">
+			<Option target="sfml-audio"/>
+		</Unit>
+		<Unit filename="/home/slinky/Slinky2D/3rdparty/sfml/src/SFML/Audio/Sound.cpp">
+			<Option target="sfml-audio"/>
+		</Unit>
+		<Unit filename="/home/slinky/Slinky2D/3rdparty/sfml/src/SFML/Audio/SoundBuffer.cpp">
+			<Option target="sfml-audio"/>
+		</Unit>
+		<Unit filename="/home/slinky/Slinky2D/3rdparty/sfml/src/SFML/Audio/SoundBufferRecorder.cpp">
+			<Option target="sfml-audio"/>
+		</Unit>
+		<Unit filename="/home/slinky/Slinky2D/3rdparty/sfml/src/SFML/Audio/SoundFileFactory.cpp">
+			<Option target="sfml-audio"/>
+		</Unit>
+		<Unit filename="/home/slinky/Slinky2D/3rdparty/sfml/src/SFML/Audio/SoundFileReaderFlac.cpp">
+			<Option target="sfml-audio"/>
+		</Unit>
+		<Unit filename="/home/slinky/Slinky2D/3rdparty/sfml/src/SFML/Audio/SoundFileReaderFlac.hpp">
+			<Option target="sfml-audio"/>
+		</Unit>
+		<Unit filename="/home/slinky/Slinky2D/3rdparty/sfml/src/SFML/Audio/SoundFileReaderMp3.cpp">
+			<Option target="sfml-audio"/>
+		</Unit>
+		<Unit filename="/home/slinky/Slinky2D/3rdparty/sfml/src/SFML/Audio/SoundFileReaderMp3.hpp">
+			<Option target="sfml-audio"/>
+		</Unit>
+		<Unit filename="/home/slinky/Slinky2D/3rdparty/sfml/src/SFML/Audio/SoundFileReaderOgg.cpp">
+			<Option target="sfml-audio"/>
+		</Unit>
+		<Unit filename="/home/slinky/Slinky2D/3rdparty/sfml/src/SFML/Audio/SoundFileReaderOgg.hpp">
+			<Option target="sfml-audio"/>
+		</Unit>
+		<Unit filename="/home/slinky/Slinky2D/3rdparty/sfml/src/SFML/Audio/SoundFileReaderWav.cpp">
+			<Option target="sfml-audio"/>
+		</Unit>
+		<Unit filename="/home/slinky/Slinky2D/3rdparty/sfml/src/SFML/Audio/SoundFileReaderWav.hpp">
+			<Option target="sfml-audio"/>
+		</Unit>
+		<Unit filename="/home/slinky/Slinky2D/3rdparty/sfml/src/SFML/Audio/SoundFileWriterFlac.cpp">
+			<Option target="sfml-audio"/>
+		</Unit>
+		<Unit filename="/home/slinky/Slinky2D/3rdparty/sfml/src/SFML/Audio/SoundFileWriterFlac.hpp">
+			<Option target="sfml-audio"/>
+		</Unit>
+		<Unit filename="/home/slinky/Slinky2D/3rdparty/sfml/src/SFML/Audio/SoundFileWriterOgg.cpp">
+			<Option target="sfml-audio"/>
+		</Unit>
+		<Unit filename="/home/slinky/Slinky2D/3rdparty/sfml/src/SFML/Audio/SoundFileWriterOgg.hpp">
+			<Option target="sfml-audio"/>
+		</Unit>
+		<Unit filename="/home/slinky/Slinky2D/3rdparty/sfml/src/SFML/Audio/SoundFileWriterWav.cpp">
+			<Option target="sfml-audio"/>
+		</Unit>
+		<Unit filename="/home/slinky/Slinky2D/3rdparty/sfml/src/SFML/Audio/SoundFileWriterWav.hpp">
+			<Option target="sfml-audio"/>
+		</Unit>
+		<Unit filename="/home/slinky/Slinky2D/3rdparty/sfml/src/SFML/Audio/SoundRecorder.cpp">
+			<Option target="sfml-audio"/>
+		</Unit>
+		<Unit filename="/home/slinky/Slinky2D/3rdparty/sfml/src/SFML/Audio/SoundSource.cpp">
+			<Option target="sfml-audio"/>
+		</Unit>
+		<Unit filename="/home/slinky/Slinky2D/3rdparty/sfml/src/SFML/Audio/SoundStream.cpp">
+			<Option target="sfml-audio"/>
+		</Unit>
+		<Unit filename="/home/slinky/Slinky2D/3rdparty/sfml/src/SFML/Graphics/BlendMode.cpp">
+			<Option target="sfml-graphics"/>
+		</Unit>
+		<Unit filename="/home/slinky/Slinky2D/3rdparty/sfml/src/SFML/Graphics/CircleShape.cpp">
+			<Option target="sfml-graphics"/>
+		</Unit>
+		<Unit filename="/home/slinky/Slinky2D/3rdparty/sfml/src/SFML/Graphics/ConvexShape.cpp">
+			<Option target="sfml-graphics"/>
+		</Unit>
+		<Unit filename="/home/slinky/Slinky2D/3rdparty/sfml/src/SFML/Graphics/Font.cpp">
+			<Option target="sfml-graphics"/>
+		</Unit>
+		<Unit filename="/home/slinky/Slinky2D/3rdparty/sfml/src/SFML/Graphics/GLCheck.cpp">
+			<Option target="sfml-graphics"/>
+		</Unit>
+		<Unit filename="/home/slinky/Slinky2D/3rdparty/sfml/src/SFML/Graphics/GLCheck.hpp">
+			<Option target="sfml-graphics"/>
+		</Unit>
+		<Unit filename="/home/slinky/Slinky2D/3rdparty/sfml/src/SFML/Graphics/GLExtensions.cpp">
+			<Option target="sfml-graphics"/>
+		</Unit>
+		<Unit filename="/home/slinky/Slinky2D/3rdparty/sfml/src/SFML/Graphics/GLExtensions.hpp">
+			<Option target="sfml-graphics"/>
+		</Unit>
+		<Unit filename="/home/slinky/Slinky2D/3rdparty/sfml/src/SFML/Graphics/Glsl.cpp">
+			<Option target="sfml-graphics"/>
+		</Unit>
+		<Unit filename="/home/slinky/Slinky2D/3rdparty/sfml/src/SFML/Graphics/Image.cpp">
+			<Option target="sfml-graphics"/>
+		</Unit>
+		<Unit filename="/home/slinky/Slinky2D/3rdparty/sfml/src/SFML/Graphics/ImageLoader.cpp">
+			<Option target="sfml-graphics"/>
+		</Unit>
+		<Unit filename="/home/slinky/Slinky2D/3rdparty/sfml/src/SFML/Graphics/ImageLoader.hpp">
+			<Option target="sfml-graphics"/>
+		</Unit>
+		<Unit filename="/home/slinky/Slinky2D/3rdparty/sfml/src/SFML/Graphics/RectangleShape.cpp">
+			<Option target="sfml-graphics"/>
+		</Unit>
+		<Unit filename="/home/slinky/Slinky2D/3rdparty/sfml/src/SFML/Graphics/RenderStates.cpp">
+			<Option target="sfml-graphics"/>
+		</Unit>
+		<Unit filename="/home/slinky/Slinky2D/3rdparty/sfml/src/SFML/Graphics/RenderTarget.cpp">
+			<Option target="sfml-graphics"/>
+		</Unit>
+		<Unit filename="/home/slinky/Slinky2D/3rdparty/sfml/src/SFML/Graphics/RenderTexture.cpp">
+			<Option target="sfml-graphics"/>
+		</Unit>
+		<Unit filename="/home/slinky/Slinky2D/3rdparty/sfml/src/SFML/Graphics/RenderTextureImpl.cpp">
+			<Option target="sfml-graphics"/>
+		</Unit>
+		<Unit filename="/home/slinky/Slinky2D/3rdparty/sfml/src/SFML/Graphics/RenderTextureImpl.hpp">
+			<Option target="sfml-graphics"/>
+		</Unit>
+		<Unit filename="/home/slinky/Slinky2D/3rdparty/sfml/src/SFML/Graphics/RenderTextureImplDefault.cpp">
+			<Option target="sfml-graphics"/>
+		</Unit>
+		<Unit filename="/home/slinky/Slinky2D/3rdparty/sfml/src/SFML/Graphics/RenderTextureImplDefault.hpp">
+			<Option target="sfml-graphics"/>
+		</Unit>
+		<Unit filename="/home/slinky/Slinky2D/3rdparty/sfml/src/SFML/Graphics/RenderTextureImplFBO.cpp">
+			<Option target="sfml-graphics"/>
+		</Unit>
+		<Unit filename="/home/slinky/Slinky2D/3rdparty/sfml/src/SFML/Graphics/RenderTextureImplFBO.hpp">
+			<Option target="sfml-graphics"/>
+		</Unit>
+		<Unit filename="/home/slinky/Slinky2D/3rdparty/sfml/src/SFML/Graphics/RenderWindow.cpp">
+			<Option target="sfml-graphics"/>
+		</Unit>
+		<Unit filename="/home/slinky/Slinky2D/3rdparty/sfml/src/SFML/Graphics/Shader.cpp">
+			<Option target="sfml-graphics"/>
+		</Unit>
+		<Unit filename="/home/slinky/Slinky2D/3rdparty/sfml/src/SFML/Graphics/Shape.cpp">
+			<Option target="sfml-graphics"/>
+		</Unit>
+		<Unit filename="/home/slinky/Slinky2D/3rdparty/sfml/src/SFML/Graphics/Sprite.cpp">
+			<Option target="sfml-graphics"/>
+		</Unit>
+		<Unit filename="/home/slinky/Slinky2D/3rdparty/sfml/src/SFML/Graphics/Text.cpp">
+			<Option target="sfml-graphics"/>
+		</Unit>
+		<Unit filename="/home/slinky/Slinky2D/3rdparty/sfml/src/SFML/Graphics/Texture.cpp">
+			<Option target="sfml-graphics"/>
+		</Unit>
+		<Unit filename="/home/slinky/Slinky2D/3rdparty/sfml/src/SFML/Graphics/TextureSaver.cpp">
+			<Option target="sfml-graphics"/>
+		</Unit>
+		<Unit filename="/home/slinky/Slinky2D/3rdparty/sfml/src/SFML/Graphics/TextureSaver.hpp">
+			<Option target="sfml-graphics"/>
+		</Unit>
+		<Unit filename="/home/slinky/Slinky2D/3rdparty/sfml/src/SFML/Graphics/Transform.cpp">
+			<Option target="sfml-graphics"/>
+		</Unit>
+		<Unit filename="/home/slinky/Slinky2D/3rdparty/sfml/src/SFML/Graphics/Transformable.cpp">
+			<Option target="sfml-graphics"/>
+		</Unit>
+		<Unit filename="/home/slinky/Slinky2D/3rdparty/sfml/src/SFML/Graphics/VertexArray.cpp">
+			<Option target="sfml-graphics"/>
+		</Unit>
+		<Unit filename="/home/slinky/Slinky2D/3rdparty/sfml/src/SFML/Graphics/VertexBuffer.cpp">
+			<Option target="sfml-graphics"/>
+		</Unit>
+		<Unit filename="/home/slinky/Slinky2D/3rdparty/sfml/src/SFML/Graphics/View.cpp">
+			<Option target="sfml-graphics"/>
+		</Unit>
+		<Unit filename="/home/slinky/Slinky2D/3rdparty/sfml/src/SFML/Network/Ftp.cpp">
+			<Option target="sfml-network"/>
+		</Unit>
+		<Unit filename="/home/slinky/Slinky2D/3rdparty/sfml/src/SFML/Network/Http.cpp">
+			<Option target="sfml-network"/>
+		</Unit>
+		<Unit filename="/home/slinky/Slinky2D/3rdparty/sfml/src/SFML/Network/IpAddress.cpp">
+			<Option target="sfml-network"/>
+		</Unit>
+		<Unit filename="/home/slinky/Slinky2D/3rdparty/sfml/src/SFML/Network/Packet.cpp">
+			<Option target="sfml-network"/>
+		</Unit>
+		<Unit filename="/home/slinky/Slinky2D/3rdparty/sfml/src/SFML/Network/Socket.cpp">
+			<Option target="sfml-network"/>
+		</Unit>
+		<Unit filename="/home/slinky/Slinky2D/3rdparty/sfml/src/SFML/Network/SocketImpl.hpp">
+			<Option target="sfml-network"/>
+		</Unit>
+		<Unit filename="/home/slinky/Slinky2D/3rdparty/sfml/src/SFML/Network/SocketSelector.cpp">
+			<Option target="sfml-network"/>
+		</Unit>
+		<Unit filename="/home/slinky/Slinky2D/3rdparty/sfml/src/SFML/Network/TcpListener.cpp">
+			<Option target="sfml-network"/>
+		</Unit>
+		<Unit filename="/home/slinky/Slinky2D/3rdparty/sfml/src/SFML/Network/TcpSocket.cpp">
+			<Option target="sfml-network"/>
+		</Unit>
+		<Unit filename="/home/slinky/Slinky2D/3rdparty/sfml/src/SFML/Network/UdpSocket.cpp">
+			<Option target="sfml-network"/>
+		</Unit>
+		<Unit filename="/home/slinky/Slinky2D/3rdparty/sfml/src/SFML/Network/Unix/SocketImpl.cpp">
+			<Option target="sfml-network"/>
+		</Unit>
+		<Unit filename="/home/slinky/Slinky2D/3rdparty/sfml/src/SFML/Network/Unix/SocketImpl.hpp">
+			<Option target="sfml-network"/>
+		</Unit>
+		<Unit filename="/home/slinky/Slinky2D/3rdparty/sfml/src/SFML/System/Clock.cpp">
+			<Option target="sfml-system"/>
+		</Unit>
+		<Unit filename="/home/slinky/Slinky2D/3rdparty/sfml/src/SFML/System/Err.cpp">
+			<Option target="sfml-system"/>
+		</Unit>
+		<Unit filename="/home/slinky/Slinky2D/3rdparty/sfml/src/SFML/System/FileInputStream.cpp">
+			<Option target="sfml-system"/>
+		</Unit>
+		<Unit filename="/home/slinky/Slinky2D/3rdparty/sfml/src/SFML/System/MemoryInputStream.cpp">
+			<Option target="sfml-system"/>
+		</Unit>
+		<Unit filename="/home/slinky/Slinky2D/3rdparty/sfml/src/SFML/System/Sleep.cpp">
+			<Option target="sfml-system"/>
+		</Unit>
+		<Unit filename="/home/slinky/Slinky2D/3rdparty/sfml/src/SFML/System/String.cpp">
+			<Option target="sfml-system"/>
+		</Unit>
+		<Unit filename="/home/slinky/Slinky2D/3rdparty/sfml/src/SFML/System/Unix/SleepImpl.cpp">
+			<Option target="sfml-system"/>
+		</Unit>
+		<Unit filename="/home/slinky/Slinky2D/3rdparty/sfml/src/SFML/System/Unix/SleepImpl.hpp">
+			<Option target="sfml-system"/>
+		</Unit>
+		<Unit filename="/home/slinky/Slinky2D/3rdparty/sfml/src/SFML/System/Vector2.cpp">
+			<Option target="sfml-system"/>
+		</Unit>
+		<Unit filename="/home/slinky/Slinky2D/3rdparty/sfml/src/SFML/System/Vector3.cpp">
+			<Option target="sfml-system"/>
+		</Unit>
+		<Unit filename="/home/slinky/Slinky2D/3rdparty/sfml/src/SFML/Window/Clipboard.cpp">
+			<Option target="sfml-window"/>
+		</Unit>
+		<Unit filename="/home/slinky/Slinky2D/3rdparty/sfml/src/SFML/Window/ClipboardImpl.hpp">
+			<Option target="sfml-window"/>
+		</Unit>
+		<Unit filename="/home/slinky/Slinky2D/3rdparty/sfml/src/SFML/Window/Context.cpp">
+			<Option target="sfml-window"/>
+		</Unit>
+		<Unit filename="/home/slinky/Slinky2D/3rdparty/sfml/src/SFML/Window/Cursor.cpp">
+			<Option target="sfml-window"/>
+		</Unit>
+		<Unit filename="/home/slinky/Slinky2D/3rdparty/sfml/src/SFML/Window/CursorImpl.hpp">
+			<Option target="sfml-window"/>
+		</Unit>
+		<Unit filename="/home/slinky/Slinky2D/3rdparty/sfml/src/SFML/Window/GlContext.cpp">
+			<Option target="sfml-window"/>
+		</Unit>
+		<Unit filename="/home/slinky/Slinky2D/3rdparty/sfml/src/SFML/Window/GlContext.hpp">
+			<Option target="sfml-window"/>
+		</Unit>
+		<Unit filename="/home/slinky/Slinky2D/3rdparty/sfml/src/SFML/Window/GlResource.cpp">
+			<Option target="sfml-window"/>
+		</Unit>
+		<Unit filename="/home/slinky/Slinky2D/3rdparty/sfml/src/SFML/Window/InputImpl.hpp">
+			<Option target="sfml-window"/>
+		</Unit>
+		<Unit filename="/home/slinky/Slinky2D/3rdparty/sfml/src/SFML/Window/Joystick.cpp">
+			<Option target="sfml-window"/>
+		</Unit>
+		<Unit filename="/home/slinky/Slinky2D/3rdparty/sfml/src/SFML/Window/JoystickImpl.hpp">
+			<Option target="sfml-window"/>
+		</Unit>
+		<Unit filename="/home/slinky/Slinky2D/3rdparty/sfml/src/SFML/Window/JoystickManager.cpp">
+			<Option target="sfml-window"/>
+		</Unit>
+		<Unit filename="/home/slinky/Slinky2D/3rdparty/sfml/src/SFML/Window/JoystickManager.hpp">
+			<Option target="sfml-window"/>
+		</Unit>
+		<Unit filename="/home/slinky/Slinky2D/3rdparty/sfml/src/SFML/Window/Keyboard.cpp">
+			<Option target="sfml-window"/>
+		</Unit>
+		<Unit filename="/home/slinky/Slinky2D/3rdparty/sfml/src/SFML/Window/Mouse.cpp">
+			<Option target="sfml-window"/>
+		</Unit>
+		<Unit filename="/home/slinky/Slinky2D/3rdparty/sfml/src/SFML/Window/Sensor.cpp">
+			<Option target="sfml-window"/>
+		</Unit>
+		<Unit filename="/home/slinky/Slinky2D/3rdparty/sfml/src/SFML/Window/SensorImpl.hpp">
+			<Option target="sfml-window"/>
+		</Unit>
+		<Unit filename="/home/slinky/Slinky2D/3rdparty/sfml/src/SFML/Window/SensorManager.cpp">
+			<Option target="sfml-window"/>
+		</Unit>
+		<Unit filename="/home/slinky/Slinky2D/3rdparty/sfml/src/SFML/Window/SensorManager.hpp">
+			<Option target="sfml-window"/>
+		</Unit>
+		<Unit filename="/home/slinky/Slinky2D/3rdparty/sfml/src/SFML/Window/Touch.cpp">
+			<Option target="sfml-window"/>
+		</Unit>
+		<Unit filename="/home/slinky/Slinky2D/3rdparty/sfml/src/SFML/Window/Unix/ClipboardImpl.cpp">
+			<Option target="sfml-window"/>
+		</Unit>
+		<Unit filename="/home/slinky/Slinky2D/3rdparty/sfml/src/SFML/Window/Unix/ClipboardImpl.hpp">
+			<Option target="sfml-window"/>
+		</Unit>
+		<Unit filename="/home/slinky/Slinky2D/3rdparty/sfml/src/SFML/Window/Unix/CursorImpl.cpp">
+			<Option target="sfml-window"/>
+		</Unit>
+		<Unit filename="/home/slinky/Slinky2D/3rdparty/sfml/src/SFML/Window/Unix/CursorImpl.hpp">
+			<Option target="sfml-window"/>
+		</Unit>
+		<Unit filename="/home/slinky/Slinky2D/3rdparty/sfml/src/SFML/Window/Unix/Display.cpp">
+			<Option target="sfml-window"/>
+		</Unit>
+		<Unit filename="/home/slinky/Slinky2D/3rdparty/sfml/src/SFML/Window/Unix/Display.hpp">
+			<Option target="sfml-window"/>
+		</Unit>
+		<Unit filename="/home/slinky/Slinky2D/3rdparty/sfml/src/SFML/Window/Unix/GlxContext.cpp">
+			<Option target="sfml-window"/>
+		</Unit>
+		<Unit filename="/home/slinky/Slinky2D/3rdparty/sfml/src/SFML/Window/Unix/GlxContext.hpp">
+			<Option target="sfml-window"/>
+		</Unit>
+		<Unit filename="/home/slinky/Slinky2D/3rdparty/sfml/src/SFML/Window/Unix/InputImpl.cpp">
+			<Option target="sfml-window"/>
+		</Unit>
+		<Unit filename="/home/slinky/Slinky2D/3rdparty/sfml/src/SFML/Window/Unix/InputImpl.hpp">
+			<Option target="sfml-window"/>
+		</Unit>
+		<Unit filename="/home/slinky/Slinky2D/3rdparty/sfml/src/SFML/Window/Unix/JoystickImpl.cpp">
+			<Option target="sfml-window"/>
+		</Unit>
+		<Unit filename="/home/slinky/Slinky2D/3rdparty/sfml/src/SFML/Window/Unix/JoystickImpl.hpp">
+			<Option target="sfml-window"/>
+		</Unit>
+		<Unit filename="/home/slinky/Slinky2D/3rdparty/sfml/src/SFML/Window/Unix/SensorImpl.cpp">
+			<Option target="sfml-window"/>
+		</Unit>
+		<Unit filename="/home/slinky/Slinky2D/3rdparty/sfml/src/SFML/Window/Unix/SensorImpl.hpp">
+			<Option target="sfml-window"/>
+		</Unit>
+		<Unit filename="/home/slinky/Slinky2D/3rdparty/sfml/src/SFML/Window/Unix/VideoModeImpl.cpp">
+			<Option target="sfml-window"/>
+		</Unit>
+		<Unit filename="/home/slinky/Slinky2D/3rdparty/sfml/src/SFML/Window/Unix/VulkanImplX11.cpp">
+			<Option target="sfml-window"/>
+		</Unit>
+		<Unit filename="/home/slinky/Slinky2D/3rdparty/sfml/src/SFML/Window/Unix/VulkanImplX11.hpp">
+			<Option target="sfml-window"/>
+		</Unit>
+		<Unit filename="/home/slinky/Slinky2D/3rdparty/sfml/src/SFML/Window/Unix/WindowImplX11.cpp">
+			<Option target="sfml-window"/>
+		</Unit>
+		<Unit filename="/home/slinky/Slinky2D/3rdparty/sfml/src/SFML/Window/Unix/WindowImplX11.hpp">
+			<Option target="sfml-window"/>
+		</Unit>
+		<Unit filename="/home/slinky/Slinky2D/3rdparty/sfml/src/SFML/Window/VideoMode.cpp">
+			<Option target="sfml-window"/>
+		</Unit>
+		<Unit filename="/home/slinky/Slinky2D/3rdparty/sfml/src/SFML/Window/VideoModeImpl.hpp">
+			<Option target="sfml-window"/>
+		</Unit>
+		<Unit filename="/home/slinky/Slinky2D/3rdparty/sfml/src/SFML/Window/Vulkan.cpp">
+			<Option target="sfml-window"/>
+		</Unit>
+		<Unit filename="/home/slinky/Slinky2D/3rdparty/sfml/src/SFML/Window/Window.cpp">
+			<Option target="sfml-window"/>
+		</Unit>
+		<Unit filename="/home/slinky/Slinky2D/3rdparty/sfml/src/SFML/Window/WindowBase.cpp">
+			<Option target="sfml-window"/>
+		</Unit>
+		<Unit filename="/home/slinky/Slinky2D/3rdparty/sfml/src/SFML/Window/WindowImpl.cpp">
+			<Option target="sfml-window"/>
+		</Unit>
+		<Unit filename="/home/slinky/Slinky2D/3rdparty/sfml/src/SFML/Window/WindowImpl.hpp">
+			<Option target="sfml-window"/>
+		</Unit>
+		<Unit filename="/home/slinky/Slinky2D/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\"/>
+		</Unit>
+		<Unit filename="/home/slinky/Slinky2D/3rdparty/sfml/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\3rdparty\sfml\"/>
+		</Unit>
+		<Unit filename="/home/slinky/Slinky2D/3rdparty/sfml/cmake/CompilerWarnings.cmake">
+			<Option virtualFolder="CMake Files\3rdparty\sfml\cmake\"/>
+		</Unit>
+		<Unit filename="/home/slinky/Slinky2D/3rdparty/sfml/cmake/Config.cmake">
+			<Option virtualFolder="CMake Files\3rdparty\sfml\cmake\"/>
+		</Unit>
+		<Unit filename="/home/slinky/Slinky2D/3rdparty/sfml/cmake/Macros.cmake">
+			<Option virtualFolder="CMake Files\3rdparty\sfml\cmake\"/>
+		</Unit>
+		<Unit filename="/home/slinky/Slinky2D/3rdparty/sfml/cmake/SFMLConfig.cmake.in">
+			<Option virtualFolder="CMake Files\3rdparty\sfml\cmake\"/>
+		</Unit>
+		<Unit filename="/home/slinky/Slinky2D/3rdparty/sfml/cmake/SFMLConfigDependencies.cmake.in">
+			<Option virtualFolder="CMake Files\3rdparty\sfml\cmake\"/>
+		</Unit>
+		<Unit filename="/home/slinky/Slinky2D/3rdparty/sfml/cmake/Modules/FindFLAC.cmake">
+			<Option virtualFolder="CMake Files\3rdparty\sfml\cmake\Modules\"/>
+		</Unit>
+		<Unit filename="/home/slinky/Slinky2D/3rdparty/sfml/cmake/Modules/FindFreetype.cmake">
+			<Option virtualFolder="CMake Files\3rdparty\sfml\cmake\Modules\"/>
+		</Unit>
+		<Unit filename="/home/slinky/Slinky2D/3rdparty/sfml/cmake/Modules/FindUDev.cmake">
+			<Option virtualFolder="CMake Files\3rdparty\sfml\cmake\Modules\"/>
+		</Unit>
+		<Unit filename="/home/slinky/Slinky2D/3rdparty/sfml/cmake/Modules/FindVORBIS.cmake">
+			<Option virtualFolder="CMake Files\3rdparty\sfml\cmake\Modules\"/>
+		</Unit>
+		<Unit filename="/home/slinky/Slinky2D/3rdparty/sfml/tools/pkg-config/sfml-all.pc.in">
+			<Option virtualFolder="CMake Files\3rdparty\sfml\tools\pkg-config\"/>
+		</Unit>
+		<Unit filename="/home/slinky/Slinky2D/3rdparty/sfml/tools/pkg-config/sfml-audio.pc.in">
+			<Option virtualFolder="CMake Files\3rdparty\sfml\tools\pkg-config\"/>
+		</Unit>
+		<Unit filename="/home/slinky/Slinky2D/3rdparty/sfml/tools/pkg-config/sfml-graphics.pc.in">
+			<Option virtualFolder="CMake Files\3rdparty\sfml\tools\pkg-config\"/>
+		</Unit>
+		<Unit filename="/home/slinky/Slinky2D/3rdparty/sfml/tools/pkg-config/sfml-network.pc.in">
+			<Option virtualFolder="CMake Files\3rdparty\sfml\tools\pkg-config\"/>
+		</Unit>
+		<Unit filename="/home/slinky/Slinky2D/3rdparty/sfml/tools/pkg-config/sfml-system.pc.in">
+			<Option virtualFolder="CMake Files\3rdparty\sfml\tools\pkg-config\"/>
+		</Unit>
+		<Unit filename="/home/slinky/Slinky2D/3rdparty/sfml/tools/pkg-config/sfml-window.pc.in">
+			<Option virtualFolder="CMake Files\3rdparty\sfml\tools\pkg-config\"/>
+		</Unit>
+		<Unit filename="/home/slinky/Slinky2D/3rdparty/sfml/src/SFML/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\3rdparty\sfml\src\SFML\"/>
+		</Unit>
+		<Unit filename="/home/slinky/Slinky2D/3rdparty/sfml/src/SFML/System/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\3rdparty\sfml\src\SFML\System\"/>
+		</Unit>
+		<Unit filename="/home/slinky/Slinky2D/3rdparty/sfml/src/SFML/Window/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\3rdparty\sfml\src\SFML\Window\"/>
+		</Unit>
+		<Unit filename="/home/slinky/Slinky2D/3rdparty/sfml/src/SFML/Network/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\3rdparty\sfml\src\SFML\Network\"/>
+		</Unit>
+		<Unit filename="/home/slinky/Slinky2D/3rdparty/sfml/src/SFML/Graphics/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\3rdparty\sfml\src\SFML\Graphics\"/>
+		</Unit>
+		<Unit filename="/home/slinky/Slinky2D/3rdparty/sfml/src/SFML/Audio/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\3rdparty\sfml\src\SFML\Audio\"/>
+		</Unit>
+		<Unit filename="/home/slinky/Slinky2D/build/_deps/googletest-src/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\build\_deps\googletest-src\"/>
+		</Unit>
+		<Unit filename="/home/slinky/Slinky2D/build/_deps/googletest-src/googlemock/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\build\_deps\googletest-src\googlemock\"/>
+		</Unit>
+		<Unit filename="/home/slinky/Slinky2D/build/_deps/googletest-src/googlemock/cmake/gmock.pc.in">
+			<Option virtualFolder="CMake Files\build\_deps\googletest-src\googlemock\cmake\"/>
+		</Unit>
+		<Unit filename="/home/slinky/Slinky2D/build/_deps/googletest-src/googlemock/cmake/gmock_main.pc.in">
+			<Option virtualFolder="CMake Files\build\_deps\googletest-src\googlemock\cmake\"/>
+		</Unit>
+		<Unit filename="/home/slinky/Slinky2D/build/_deps/googletest-src/googletest/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\build\_deps\googletest-src\googletest\"/>
+		</Unit>
+		<Unit filename="/home/slinky/Slinky2D/build/_deps/googletest-src/googletest/cmake/Config.cmake.in">
+			<Option virtualFolder="CMake Files\build\_deps\googletest-src\googletest\cmake\"/>
+		</Unit>
+		<Unit filename="/home/slinky/Slinky2D/build/_deps/googletest-src/googletest/cmake/gtest.pc.in">
+			<Option virtualFolder="CMake Files\build\_deps\googletest-src\googletest\cmake\"/>
+		</Unit>
+		<Unit filename="/home/slinky/Slinky2D/build/_deps/googletest-src/googletest/cmake/gtest_main.pc.in">
+			<Option virtualFolder="CMake Files\build\_deps\googletest-src\googletest\cmake\"/>
+		</Unit>
+		<Unit filename="/home/slinky/Slinky2D/build/_deps/googletest-src/googletest/cmake/internal_utils.cmake">
+			<Option virtualFolder="CMake Files\build\_deps\googletest-src\googletest\cmake\"/>
+		</Unit>
+	</Project>
+</CodeBlocks_project_file>

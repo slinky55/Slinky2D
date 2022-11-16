@@ -1,0 +1,5 @@
+if(EXISTS "/home/slinky/Slinky2D/build/HelloTest[1]_tests.cmake")
+  include("/home/slinky/Slinky2D/build/HelloTest[1]_tests.cmake")
+else()
+  add_test(HelloTest_NOT_BUILT HelloTest_NOT_BUILT)
+endif()

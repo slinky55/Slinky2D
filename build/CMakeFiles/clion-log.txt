@@ -1,0 +1,7 @@
+/snap/clion/209/bin/cmake/linux/bin/cmake -DCMAKE_BUILD_TYPE=Debug -DCMAKE_MAKE_PROGRAM=/bin/make -DCMAKE_C_COMPILER=/bin/x86_64-linux-gnu-gcc -DCMAKE_CXX_COMPILER=/bin/x86_64-linux-gnu-g++ -G "CodeBlocks - Unix Makefiles" -S /home/slinky/Slinky2D -B /home/slinky/Slinky2D/build
+-- libudev stable: 1
+-- Found UDev: /usr/lib/x86_64-linux-gnu/libudev.so
+--    include: /usr/include
+-- Configuring done
+-- Generating done
+-- Build files have been written to: /home/slinky/Slinky2D/build

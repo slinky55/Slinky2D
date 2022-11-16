@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6"/>
+	<Project>
+		<Option title="gtest"/>
+		<Option makefile_is_custom="1"/>
+		<Option compiler="gcc"/>
+		<Option virtualFolders="CMake Files\;CMake Files\3rdparty\;CMake Files\3rdparty\sfml\;CMake Files\3rdparty\sfml\cmake\;CMake Files\3rdparty\sfml\cmake\Modules\;CMake Files\3rdparty\sfml\tools\;CMake Files\3rdparty\sfml\tools\pkg-config\;CMake Files\3rdparty\sfml\src\;CMake Files\3rdparty\sfml\src\SFML\;CMake Files\3rdparty\sfml\src\SFML\System\;CMake Files\3rdparty\sfml\src\SFML\Window\;CMake Files\3rdparty\sfml\src\SFML\Network\;CMake Files\3rdparty\sfml\src\SFML\Graphics\;CMake Files\3rdparty\sfml\src\SFML\Audio\;CMake Files\build\;CMake Files\build\_deps\;CMake Files\build\_deps\googletest-src\;CMake Files\build\_deps\googletest-src\googlemock\;CMake Files\build\_deps\googletest-src\googlemock\cmake\;CMake Files\build\_deps\googletest-src\googletest\;CMake Files\build\_deps\googletest-src\googletest\cmake\;"/>
+		<Build>
+			<Target title="all">
+				<Option working_dir="/home/slinky/Slinky2D/build/_deps/googletest-build/googletest"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/bin/make -f &quot;/home/slinky/Slinky2D/build/_deps/googletest-build/googletest/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="/bin/make -f &quot;/home/slinky/Slinky2D/build/_deps/googletest-build/googletest/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/bin/make -f &quot;/home/slinky/Slinky2D/build/_deps/googletest-build/googletest/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/bin/make -f &quot;/home/slinky/Slinky2D/build/_deps/googletest-build/googletest/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="gtest">
+				<Option output="/home/slinky/Slinky2D/build/lib/libgtest.so" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/slinky/Slinky2D/build/_deps/googletest-build/googletest"/>
+				<Option object_output="./"/>
+				<Option type="3"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add option="-DGTEST_CREATE_SHARED_LIBRARY=1"/>
+					<Add directory="/home/slinky/Slinky2D/build/_deps/googletest-src/googletest/include"/>
+					<Add directory="/home/slinky/Slinky2D/build/_deps/googletest-src/googletest"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/bin/make -f &quot;/home/slinky/Slinky2D/build/_deps/googletest-build/googletest/Makefile&quot;  VERBOSE=1 gtest"/>
+					<CompileFile command="/bin/make -f &quot;/home/slinky/Slinky2D/build/_deps/googletest-build/googletest/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/bin/make -f &quot;/home/slinky/Slinky2D/build/_deps/googletest-build/googletest/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/bin/make -f &quot;/home/slinky/Slinky2D/build/_deps/googletest-build/googletest/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="gtest/fast">
+				<Option output="/home/slinky/Slinky2D/build/lib/libgtest.so" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/slinky/Slinky2D/build/_deps/googletest-build/googletest"/>
+				<Option object_output="./"/>
+				<Option type="3"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add option="-DGTEST_CREATE_SHARED_LIBRARY=1"/>
+					<Add directory="/home/slinky/Slinky2D/build/_deps/googletest-src/googletest/include"/>
+					<Add directory="/home/slinky/Slinky2D/build/_deps/googletest-src/googletest"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/bin/make -f &quot;/home/slinky/Slinky2D/build/_deps/googletest-build/googletest/Makefile&quot;  VERBOSE=1 gtest/fast"/>
+					<CompileFile command="/bin/make -f &quot;/home/slinky/Slinky2D/build/_deps/googletest-build/googletest/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/bin/make -f &quot;/home/slinky/Slinky2D/build/_deps/googletest-build/googletest/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/bin/make -f &quot;/home/slinky/Slinky2D/build/_deps/googletest-build/googletest/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="gtest_main">
+				<Option output="/home/slinky/Slinky2D/build/lib/libgtest_main.so" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/slinky/Slinky2D/build/_deps/googletest-build/googletest"/>
+				<Option object_output="./"/>
+				<Option type="3"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add option="-DGTEST_CREATE_SHARED_LIBRARY=1"/>
+					<Add directory="/home/slinky/Slinky2D/build/_deps/googletest-src/googletest/include"/>
+					<Add directory="/home/slinky/Slinky2D/build/_deps/googletest-src/googletest"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/bin/make -f &quot;/home/slinky/Slinky2D/build/_deps/googletest-build/googletest/Makefile&quot;  VERBOSE=1 gtest_main"/>
+					<CompileFile command="/bin/make -f &quot;/home/slinky/Slinky2D/build/_deps/googletest-build/googletest/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/bin/make -f &quot;/home/slinky/Slinky2D/build/_deps/googletest-build/googletest/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/bin/make -f &quot;/home/slinky/Slinky2D/build/_deps/googletest-build/googletest/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="gtest_main/fast">
+				<Option output="/home/slinky/Slinky2D/build/lib/libgtest_main.so" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/slinky/Slinky2D/build/_deps/googletest-build/googletest"/>
+				<Option object_output="./"/>
+				<Option type="3"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add option="-DGTEST_CREATE_SHARED_LIBRARY=1"/>
+					<Add directory="/home/slinky/Slinky2D/build/_deps/googletest-src/googletest/include"/>
+					<Add directory="/home/slinky/Slinky2D/build/_deps/googletest-src/googletest"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/bin/make -f &quot;/home/slinky/Slinky2D/build/_deps/googletest-build/googletest/Makefile&quot;  VERBOSE=1 gtest_main/fast"/>
+					<CompileFile command="/bin/make -f &quot;/home/slinky/Slinky2D/build/_deps/googletest-build/googletest/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/bin/make -f &quot;/home/slinky/Slinky2D/build/_deps/googletest-build/googletest/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/bin/make -f &quot;/home/slinky/Slinky2D/build/_deps/googletest-build/googletest/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+		</Build>
+		<Unit filename="/home/slinky/Slinky2D/build/_deps/googletest-src/googletest/src/gtest-all.cc">
+			<Option target="gtest"/>
+		</Unit>
+		<Unit filename="/home/slinky/Slinky2D/build/_deps/googletest-src/googletest/src/gtest_main.cc">
+			<Option target="gtest_main"/>
+		</Unit>
+		<Unit filename="/home/slinky/Slinky2D/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\"/>
+		</Unit>
+		<Unit filename="/home/slinky/Slinky2D/3rdparty/sfml/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\3rdparty\sfml\"/>
+		</Unit>
+		<Unit filename="/home/slinky/Slinky2D/3rdparty/sfml/cmake/CompilerWarnings.cmake">
+			<Option virtualFolder="CMake Files\3rdparty\sfml\cmake\"/>
+		</Unit>
+		<Unit filename="/home/slinky/Slinky2D/3rdparty/sfml/cmake/Config.cmake">
+			<Option virtualFolder="CMake Files\3rdparty\sfml\cmake\"/>
+		</Unit>
+		<Unit filename="/home/slinky/Slinky2D/3rdparty/sfml/cmake/Macros.cmake">
+			<Option virtualFolder="CMake Files\3rdparty\sfml\cmake\"/>
+		</Unit>
+		<Unit filename="/home/slinky/Slinky2D/3rdparty/sfml/cmake/SFMLConfig.cmake.in">
+			<Option virtualFolder="CMake Files\3rdparty\sfml\cmake\"/>
+		</Unit>
+		<Unit filename="/home/slinky/Slinky2D/3rdparty/sfml/cmake/SFMLConfigDependencies.cmake.in">
+			<Option virtualFolder="CMake Files\3rdparty\sfml\cmake\"/>
+		</Unit>
+		<Unit filename="/home/slinky/Slinky2D/3rdparty/sfml/cmake/Modules/FindFLAC.cmake">
+			<Option virtualFolder="CMake Files\3rdparty\sfml\cmake\Modules\"/>
+		</Unit>
+		<Unit filename="/home/slinky/Slinky2D/3rdparty/sfml/cmake/Modules/FindFreetype.cmake">
+			<Option virtualFolder="CMake Files\3rdparty\sfml\cmake\Modules\"/>
+		</Unit>
+		<Unit filename="/home/slinky/Slinky2D/3rdparty/sfml/cmake/Modules/FindUDev.cmake">
+			<Option virtualFolder="CMake Files\3rdparty\sfml\cmake\Modules\"/>
+		</Unit>
+		<Unit filename="/home/slinky/Slinky2D/3rdparty/sfml/cmake/Modules/FindVORBIS.cmake">
+			<Option virtualFolder="CMake Files\3rdparty\sfml\cmake\Modules\"/>
+		</Unit>
+		<Unit filename="/home/slinky/Slinky2D/3rdparty/sfml/tools/pkg-config/sfml-all.pc.in">
+			<Option virtualFolder="CMake Files\3rdparty\sfml\tools\pkg-config\"/>
+		</Unit>
+		<Unit filename="/home/slinky/Slinky2D/3rdparty/sfml/tools/pkg-config/sfml-audio.pc.in">
+			<Option virtualFolder="CMake Files\3rdparty\sfml\tools\pkg-config\"/>
+		</Unit>
+		<Unit filename="/home/slinky/Slinky2D/3rdparty/sfml/tools/pkg-config/sfml-graphics.pc.in">
+			<Option virtualFolder="CMake Files\3rdparty\sfml\tools\pkg-config\"/>
+		</Unit>
+		<Unit filename="/home/slinky/Slinky2D/3rdparty/sfml/tools/pkg-config/sfml-network.pc.in">
+			<Option virtualFolder="CMake Files\3rdparty\sfml\tools\pkg-config\"/>
+		</Unit>
+		<Unit filename="/home/slinky/Slinky2D/3rdparty/sfml/tools/pkg-config/sfml-system.pc.in">
+			<Option virtualFolder="CMake Files\3rdparty\sfml\tools\pkg-config\"/>
+		</Unit>
+		<Unit filename="/home/slinky/Slinky2D/3rdparty/sfml/tools/pkg-config/sfml-window.pc.in">
+			<Option virtualFolder="CMake Files\3rdparty\sfml\tools\pkg-config\"/>
+		</Unit>
+		<Unit filename="/home/slinky/Slinky2D/3rdparty/sfml/src/SFML/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\3rdparty\sfml\src\SFML\"/>
+		</Unit>
+		<Unit filename="/home/slinky/Slinky2D/3rdparty/sfml/src/SFML/System/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\3rdparty\sfml\src\SFML\System\"/>
+		</Unit>
+		<Unit filename="/home/slinky/Slinky2D/3rdparty/sfml/src/SFML/Window/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\3rdparty\sfml\src\SFML\Window\"/>
+		</Unit>
+		<Unit filename="/home/slinky/Slinky2D/3rdparty/sfml/src/SFML/Network/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\3rdparty\sfml\src\SFML\Network\"/>
+		</Unit>
+		<Unit filename="/home/slinky/Slinky2D/3rdparty/sfml/src/SFML/Graphics/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\3rdparty\sfml\src\SFML\Graphics\"/>
+		</Unit>
+		<Unit filename="/home/slinky/Slinky2D/3rdparty/sfml/src/SFML/Audio/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\3rdparty\sfml\src\SFML\Audio\"/>
+		</Unit>
+		<Unit filename="/home/slinky/Slinky2D/build/_deps/googletest-src/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\build\_deps\googletest-src\"/>
+		</Unit>
+		<Unit filename="/home/slinky/Slinky2D/build/_deps/googletest-src/googlemock/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\build\_deps\googletest-src\googlemock\"/>
+		</Unit>
+		<Unit filename="/home/slinky/Slinky2D/build/_deps/googletest-src/googlemock/cmake/gmock.pc.in">
+			<Option virtualFolder="CMake Files\build\_deps\googletest-src\googlemock\cmake\"/>
+		</Unit>
+		<Unit filename="/home/slinky/Slinky2D/build/_deps/googletest-src/googlemock/cmake/gmock_main.pc.in">
+			<Option virtualFolder="CMake Files\build\_deps\googletest-src\googlemock\cmake\"/>
+		</Unit>
+		<Unit filename="/home/slinky/Slinky2D/build/_deps/googletest-src/googletest/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\build\_deps\googletest-src\googletest\"/>
+		</Unit>
+		<Unit filename="/home/slinky/Slinky2D/build/_deps/googletest-src/googletest/cmake/Config.cmake.in">
+			<Option virtualFolder="CMake Files\build\_deps\googletest-src\googletest\cmake\"/>
+		</Unit>
+		<Unit filename="/home/slinky/Slinky2D/build/_deps/googletest-src/googletest/cmake/gtest.pc.in">
+			<Option virtualFolder="CMake Files\build\_deps\googletest-src\googletest\cmake\"/>
+		</Unit>
+		<Unit filename="/home/slinky/Slinky2D/build/_deps/googletest-src/googletest/cmake/gtest_main.pc.in">
+			<Option virtualFolder="CMake Files\build\_deps\googletest-src\googletest\cmake\"/>
+		</Unit>
+		<Unit filename="/home/slinky/Slinky2D/build/_deps/googletest-src/googletest/cmake/internal_utils.cmake">
+			<Option virtualFolder="CMake Files\build\_deps\googletest-src\googletest\cmake\"/>
+		</Unit>
+	</Project>
+</CodeBlocks_project_file>
