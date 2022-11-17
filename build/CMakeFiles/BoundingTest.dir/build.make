@@ -69,28 +69,28 @@ include CMakeFiles/BoundingTest.dir/progress.make
 # Include the compile flags for this target's objects.
 include CMakeFiles/BoundingTest.dir/flags.make
 
-CMakeFiles/BoundingTest.dir/examples/BoundingTest/main.cpp.o: CMakeFiles/BoundingTest.dir/flags.make
-CMakeFiles/BoundingTest.dir/examples/BoundingTest/main.cpp.o: ../examples/BoundingTest/main.cpp
-CMakeFiles/BoundingTest.dir/examples/BoundingTest/main.cpp.o: CMakeFiles/BoundingTest.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/slinky/Slinky2D/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/BoundingTest.dir/examples/BoundingTest/main.cpp.o"
-	/bin/x86_64-linux-gnu-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/BoundingTest.dir/examples/BoundingTest/main.cpp.o -MF CMakeFiles/BoundingTest.dir/examples/BoundingTest/main.cpp.o.d -o CMakeFiles/BoundingTest.dir/examples/BoundingTest/main.cpp.o -c /home/slinky/Slinky2D/examples/BoundingTest/main.cpp
+CMakeFiles/BoundingTest.dir/examples/FallingBox/main.cpp.o: CMakeFiles/BoundingTest.dir/flags.make
+CMakeFiles/BoundingTest.dir/examples/FallingBox/main.cpp.o: ../examples/FallingBox/main.cpp
+CMakeFiles/BoundingTest.dir/examples/FallingBox/main.cpp.o: CMakeFiles/BoundingTest.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/slinky/Slinky2D/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/BoundingTest.dir/examples/FallingBox/main.cpp.o"
+	/bin/x86_64-linux-gnu-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/BoundingTest.dir/examples/FallingBox/main.cpp.o -MF CMakeFiles/BoundingTest.dir/examples/FallingBox/main.cpp.o.d -o CMakeFiles/BoundingTest.dir/examples/FallingBox/main.cpp.o -c /home/slinky/Slinky2D/examples/FallingBox/main.cpp
 
-CMakeFiles/BoundingTest.dir/examples/BoundingTest/main.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/BoundingTest.dir/examples/BoundingTest/main.cpp.i"
-	/bin/x86_64-linux-gnu-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/slinky/Slinky2D/examples/BoundingTest/main.cpp > CMakeFiles/BoundingTest.dir/examples/BoundingTest/main.cpp.i
+CMakeFiles/BoundingTest.dir/examples/FallingBox/main.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/BoundingTest.dir/examples/FallingBox/main.cpp.i"
+	/bin/x86_64-linux-gnu-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/slinky/Slinky2D/examples/FallingBox/main.cpp > CMakeFiles/BoundingTest.dir/examples/FallingBox/main.cpp.i
 
-CMakeFiles/BoundingTest.dir/examples/BoundingTest/main.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/BoundingTest.dir/examples/BoundingTest/main.cpp.s"
-	/bin/x86_64-linux-gnu-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/slinky/Slinky2D/examples/BoundingTest/main.cpp -o CMakeFiles/BoundingTest.dir/examples/BoundingTest/main.cpp.s
+CMakeFiles/BoundingTest.dir/examples/FallingBox/main.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/BoundingTest.dir/examples/FallingBox/main.cpp.s"
+	/bin/x86_64-linux-gnu-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/slinky/Slinky2D/examples/FallingBox/main.cpp -o CMakeFiles/BoundingTest.dir/examples/FallingBox/main.cpp.s
 
 # Object files for target BoundingTest
 BoundingTest_OBJECTS = \
-"CMakeFiles/BoundingTest.dir/examples/BoundingTest/main.cpp.o"
+"CMakeFiles/BoundingTest.dir/examples/FallingBox/main.cpp.o"
 
 # External object files for target BoundingTest
 BoundingTest_EXTERNAL_OBJECTS =
 
-BoundingTest: CMakeFiles/BoundingTest.dir/examples/BoundingTest/main.cpp.o
+BoundingTest: CMakeFiles/BoundingTest.dir/examples/FallingBox/main.cpp.o
 BoundingTest: CMakeFiles/BoundingTest.dir/build.make
 BoundingTest: libSlinky2D.a
 BoundingTest: 3rdparty/sfml/lib/libsfml-graphics-d.so.3.0.0

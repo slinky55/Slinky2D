@@ -97,8 +97,8 @@ test/fast: test
 
 # Special rule for the target edit_cache
 edit_cache:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake cache editor..."
-	/snap/clion/209/bin/cmake/linux/bin/ccmake -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
+	/snap/clion/209/bin/cmake/linux/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
 .PHONY : edit_cache
 
 # Special rule for the target edit_cache
@@ -360,29 +360,29 @@ sfml-audio/fast:
 	$(MAKE) $(MAKESILENT) -f 3rdparty/sfml/src/SFML/Audio/CMakeFiles/sfml-audio.dir/build.make 3rdparty/sfml/src/SFML/Audio/CMakeFiles/sfml-audio.dir/build
 .PHONY : sfml-audio/fast
 
-examples/BoundingTest/main.o: examples/BoundingTest/main.cpp.o
-.PHONY : examples/BoundingTest/main.o
+examples/FallingBox/main.o: examples/FallingBox/main.cpp.o
+.PHONY : examples/FallingBox/main.o
 
 # target to build an object file
-examples/BoundingTest/main.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/BoundingTest.dir/build.make CMakeFiles/BoundingTest.dir/examples/BoundingTest/main.cpp.o
-.PHONY : examples/BoundingTest/main.cpp.o
+examples/FallingBox/main.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/BoundingTest.dir/build.make CMakeFiles/BoundingTest.dir/examples/FallingBox/main.cpp.o
+.PHONY : examples/FallingBox/main.cpp.o
 
-examples/BoundingTest/main.i: examples/BoundingTest/main.cpp.i
-.PHONY : examples/BoundingTest/main.i
+examples/FallingBox/main.i: examples/FallingBox/main.cpp.i
+.PHONY : examples/FallingBox/main.i
 
 # target to preprocess a source file
-examples/BoundingTest/main.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/BoundingTest.dir/build.make CMakeFiles/BoundingTest.dir/examples/BoundingTest/main.cpp.i
-.PHONY : examples/BoundingTest/main.cpp.i
+examples/FallingBox/main.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/BoundingTest.dir/build.make CMakeFiles/BoundingTest.dir/examples/FallingBox/main.cpp.i
+.PHONY : examples/FallingBox/main.cpp.i
 
-examples/BoundingTest/main.s: examples/BoundingTest/main.cpp.s
-.PHONY : examples/BoundingTest/main.s
+examples/FallingBox/main.s: examples/FallingBox/main.cpp.s
+.PHONY : examples/FallingBox/main.s
 
 # target to generate assembly for a file
-examples/BoundingTest/main.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/BoundingTest.dir/build.make CMakeFiles/BoundingTest.dir/examples/BoundingTest/main.cpp.s
-.PHONY : examples/BoundingTest/main.cpp.s
+examples/FallingBox/main.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/BoundingTest.dir/build.make CMakeFiles/BoundingTest.dir/examples/FallingBox/main.cpp.s
+.PHONY : examples/FallingBox/main.cpp.s
 
 examples/test/main.o: examples/test/main.cpp.o
 .PHONY : examples/test/main.o
@@ -508,9 +508,9 @@ help:
 	@echo "... sfml-network"
 	@echo "... sfml-system"
 	@echo "... sfml-window"
-	@echo "... examples/BoundingTest/main.o"
-	@echo "... examples/BoundingTest/main.i"
-	@echo "... examples/BoundingTest/main.s"
+	@echo "... examples/FallingBox/main.o"
+	@echo "... examples/FallingBox/main.i"
+	@echo "... examples/FallingBox/main.s"
 	@echo "... examples/test/main.o"
 	@echo "... examples/test/main.i"
 	@echo "... examples/test/main.s"

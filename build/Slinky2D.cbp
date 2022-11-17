@@ -1294,7 +1294,7 @@
 		<Unit filename="/home/slinky/Slinky2D/build/_deps/googletest-src/googletest/src/gtest_main.cc">
 			<Option target="gtest_main"/>
 		</Unit>
-		<Unit filename="/home/slinky/Slinky2D/examples/BoundingTest/main.cpp">
+		<Unit filename="/home/slinky/Slinky2D/examples/FallingBox/main.cpp">
 			<Option target="BoundingTest"/>
 		</Unit>
 		<Unit filename="/home/slinky/Slinky2D/examples/test/main.cpp">

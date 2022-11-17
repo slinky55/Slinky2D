@@ -8,7 +8,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
-  "/home/slinky/Slinky2D/examples/BoundingTest/main.cpp" "CMakeFiles/BoundingTest.dir/examples/BoundingTest/main.cpp.o" "gcc" "CMakeFiles/BoundingTest.dir/examples/BoundingTest/main.cpp.o.d"
+  "/home/slinky/Slinky2D/examples/FallingBox/main.cpp" "CMakeFiles/BoundingTest.dir/examples/FallingBox/main.cpp.o" "gcc" "CMakeFiles/BoundingTest.dir/examples/FallingBox/main.cpp.o.d"
   )
 
 # Targets to which this target links.

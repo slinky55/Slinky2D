@@ -44,7 +44,7 @@ target_link_libraries(Test
         PRIVATE
         ${PROJECT_NAME} sfml-system sfml-graphics sfml-window)
 
-add_executable(BoundingTest examples/BoundingTest/main.cpp)
+add_executable(BoundingTest examples/FallingBox/main.cpp)
 target_link_libraries(BoundingTest
         PRIVATE
         ${PROJECT_NAME} sfml-system sfml-graphics sfml-window)
