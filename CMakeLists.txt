@@ -22,7 +22,7 @@ FetchContent_MakeAvailable(googletest)
 
 add_library(${PROJECT_NAME} STATIC)
 
-file(GLOB_RECURSE SRCS src/*.cpp)
+file(GLOB_RECURSE SRCS src/Slinky/*.cpp)
 
 target_sources(${PROJECT_NAME}
     PRIVATE
@@ -31,7 +31,7 @@ target_sources(${PROJECT_NAME}
 
 target_include_directories(${PROJECT_NAME}
         PUBLIC
-        ${PROJECT_SOURCE_DIR}/include)
+        include)
 
 # SFML
 
@@ -39,15 +39,11 @@ add_subdirectory(3rdparty/sfml)
 
 # examples
 
-add_executable(Test examples/test/main.cpp)
-target_link_libraries(Test
+add_executable(FallingBox examples/FallingBox/main.cpp)
+target_link_libraries(FallingBox
         PRIVATE
-        ${PROJECT_NAME} sfml-system sfml-graphics sfml-window)
-
-add_executable(BoundingTest examples/FallingBox/main.cpp)
-target_link_libraries(BoundingTest
-        PRIVATE
-        ${PROJECT_NAME} sfml-system sfml-graphics sfml-window)
+        ${PROJECT_NAME}
+        sfml-system sfml-graphics sfml-window)
 
 # tests
 include(GoogleTest)

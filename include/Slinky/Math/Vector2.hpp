@@ -27,6 +27,8 @@ namespace Slinky::Math
 
         [[nodiscard]] Vector2 Normal() const;
         void Normalize();
+
+        void Zero();
     };
 
 }

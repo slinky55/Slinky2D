@@ -1,6 +1,6 @@
 #include <gtest/gtest.h>
 
-#include <Slinky/Collision/AABB.h>
+#include <Slinky/Collision/AABB.hpp>
 
 TEST (AABBTest, Intersection)
 {

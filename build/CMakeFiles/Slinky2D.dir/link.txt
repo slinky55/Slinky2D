@@ -1,2 +1,0 @@
-/usr/bin/ar qc libSlinky2D.a CMakeFiles/Slinky2D.dir/src/Collision/AABB.cpp.o CMakeFiles/Slinky2D.dir/src/Math/Vector2.cpp.o
-/usr/bin/ranlib libSlinky2D.a

@@ -1,7 +1,0 @@
-[
-{
-  "directory": "/home/slinky/Slinky2D/build",
-  "command": "/usr/bin/c++  -I/home/slinky/Slinky2D/include -g -std=gnu++17 -o CMakeFiles/Slinky2D.dir/src/Math/Vector2.cpp.o -c /home/slinky/Slinky2D/src/Math/Vector2.cpp",
-  "file": "/home/slinky/Slinky2D/src/Math/Vector2.cpp"
-}
-]
