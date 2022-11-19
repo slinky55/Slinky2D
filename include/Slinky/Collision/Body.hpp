@@ -16,11 +16,13 @@ namespace Slinky::Collision
         Math::Vector2 size;
         float mass;
         float restitution;
+        float damping;
 
         BodyCfg(const Math::Vector2& _pos,
                 const Math::Vector2& _size,
                 float _mass,
-                float _restitution);
+                float _restitution,
+                float _damping);
     };
 
     struct Body
@@ -35,8 +37,11 @@ namespace Slinky::Collision
         [[nodiscard]] float Mass() const;
         [[nodiscard]] float InvMass() const;
         [[nodiscard]] float Restitution() const;
+        [[nodiscard]] float Damping() const;
 
         [[nodiscard]] const AABB& Collider() const;
+
+        void Integrate(float _dt);
 
         void ApplyForce(const Math::Vector2& _force);
         void ClearForces();
@@ -47,14 +52,17 @@ namespace Slinky::Collision
         explicit Body(const BodyCfg& _cfg);
 
         Math::Vector2 pos;
-        Math::Vector2 vel;
-        Math::Vector2 acc;
+        Math::Vector2 vel {0, 0};
+        Math::Vector2 acc {0, 0};
+
+        Math::Vector2 forces;
 
         Math::Vector2 size;
 
         float mass;
         float invMass;
         float restitution;
+        float damping;
 
         AABB collider;
     };

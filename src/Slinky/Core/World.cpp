@@ -2,6 +2,9 @@
 
 namespace Slinky::Core
 {
+    World::World(const Math::Vector2& _gravity)
+        : m_gravity{_gravity}
+    {}
     World::~World()
     {
         for (auto body : m_bodies)
@@ -14,6 +17,7 @@ namespace Slinky::Core
     {
         return m_bodies.emplace_back(new Collision::Body(_cfg));
     }
+
     void World::DestroyBody(Collision::Body *_body)
     {
         std::remove(m_bodies.begin(), m_bodies.end(), _body);
@@ -21,11 +25,16 @@ namespace Slinky::Core
         _body = nullptr;
     }
 
-    void World::Step(float _dt)
+
+    void World::Step(float _dt) const
     {
         for (auto& body : m_bodies)
         {
-            body->
+            body->ApplyForce(m_gravity);
+
+            body->Integrate(_dt);
+
+            body->ClearForces();
         }
     }
 }

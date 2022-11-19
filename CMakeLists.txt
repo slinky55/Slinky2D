@@ -45,6 +45,12 @@ target_link_libraries(FallingBox
         ${PROJECT_NAME}
         sfml-system sfml-graphics sfml-window)
 
+add_executable(Particles examples/Particles/main.cpp)
+target_link_libraries(Particles
+        PRIVATE
+        ${PROJECT_NAME}
+        sfml-system sfml-graphics sfml-window)
+
 # tests
 include(GoogleTest)
 
