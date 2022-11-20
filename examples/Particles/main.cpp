@@ -1,7 +1,5 @@
 #include <random>
 
-#include <cstdint>
-
 #include <SFML/Graphics.hpp>
 
 #include <Slinky/Particle/Particle.hpp>

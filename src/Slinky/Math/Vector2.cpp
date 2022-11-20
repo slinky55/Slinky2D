@@ -11,17 +11,19 @@ namespace Slinky::Math
     Vector2 Vector2::operator+(const Vector2 &_rhs) const {
         return {x + _rhs.x, y + _rhs.y};
     }
-
     Vector2 Vector2::operator-(const Vector2 &_rhs) const {
         return {x - _rhs.x, y - _rhs.y};
     }
-
     Vector2 Vector2::operator*(float _rhs) const {
         return {x * _rhs, y * _rhs};
     }
-
     Vector2 Vector2::operator/(float _rhs) const {
         return {x / _rhs, y / _rhs};
+    }
+
+    float Vector2::operator*(const Vector2& _rhs) const
+    {
+        return (x * _rhs.x) + (y * _rhs.y);
     }
 
     Vector2 &Vector2::operator+=(const Vector2 &_rhs) {
@@ -30,21 +32,18 @@ namespace Slinky::Math
 
         return *this;
     }
-
     Vector2 &Vector2::operator-=(const Vector2 &_rhs) {
         x -= _rhs.x;
         y -= _rhs.y;
 
         return *this;
     }
-
     Vector2 &Vector2::operator*=(float _rhs) {
         x *= _rhs;
         y *= _rhs;
 
         return *this;
     }
-
     Vector2 &Vector2::operator/=(float _rhs) {
         x /= _rhs;
         y /= _rhs;
@@ -61,7 +60,6 @@ namespace Slinky::Math
     {
         *this /= Magnitude();
     }
-
     Vector2 Vector2::Normal() const
     {
         return (*this / Magnitude());
