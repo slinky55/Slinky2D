@@ -1,6 +1,7 @@
 #include <Slinky/Collision/Body.hpp>
 
 namespace Slinky::Collision {
+
     BodyCfg::BodyCfg(const Math::Vector2 &_pos,
                      const Math::Vector2 &_size,
                      float _mass,
@@ -22,7 +23,11 @@ namespace Slinky::Collision {
             restitution{_cfg.restitution},
             damping{_cfg.damping},
             collider{_cfg.pos,
-                     _cfg.size / 2.f} {}
+                     _cfg.size / 2.f}
+    {
+        if (mass == 0.f)
+            invMass = 0.f;
+    }
 
     Math::Vector2 Body::Position() const {
         return pos;
@@ -97,6 +102,8 @@ namespace Slinky::Collision {
         pos += vel * _dt;
         acc += forces * invMass;
         vel += acc * _dt;
+
+        collider.center = pos;
 
         vel *= powf(damping, _dt);
     }

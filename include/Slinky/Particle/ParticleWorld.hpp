@@ -1,6 +1,7 @@
 #pragma once
 
 #include <vector>
+#include <iostream>
 
 #include <Slinky/Math/Vector2.hpp>
 

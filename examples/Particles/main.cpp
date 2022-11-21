@@ -1,4 +1,5 @@
 #include <random>
+#include <array>
 
 #include <SFML/Graphics.hpp>
 
@@ -15,7 +16,7 @@ int main()
     // For creating random numbers in a range
     std::random_device rd;
     std::mt19937 gen(rd());
-    std::uniform_real_distribution<float> dist(-20.f, 20.f);
+    std::uniform_real_distribution<float> dist(-3, 3);
 
     sf::RenderWindow window { sf::VideoMode{{800, 600}}, "Particles" };
 
@@ -28,12 +29,25 @@ int main()
         8
     };
 
-    // Position of the particle emitter
-    Math::Vector2 emitterPosition { 400.f / PIXELS_PER_METER, 300.f / PIXELS_PER_METER };
+    // emitter positions
+    std::vector<Math::Vector2> emitters {
+        { 350.f / PIXELS_PER_METER, 300.f / PIXELS_PER_METER },
+        { 360.f / PIXELS_PER_METER, 300.f / PIXELS_PER_METER },
+        { 370.f / PIXELS_PER_METER, 300.f / PIXELS_PER_METER },
+        { 380.f / PIXELS_PER_METER, 300.f / PIXELS_PER_METER },
+        { 390.f / PIXELS_PER_METER, 300.f / PIXELS_PER_METER },
+        { 400.f / PIXELS_PER_METER, 300.f / PIXELS_PER_METER },
+        { 410.f / PIXELS_PER_METER, 300.f / PIXELS_PER_METER },
+        { 420.f / PIXELS_PER_METER, 300.f / PIXELS_PER_METER },
+        { 430.f / PIXELS_PER_METER, 300.f / PIXELS_PER_METER },
+        { 440.f / PIXELS_PER_METER, 300.f / PIXELS_PER_METER },
+        { 450.f / PIXELS_PER_METER, 300.f / PIXELS_PER_METER }
+    };
+
 
     // Define config for all particles
     Particle::ParticleCfg cfg {
-        emitterPosition,
+        emitters[0],
         2 / PIXELS_PER_METER,
         10.f,
         0,
@@ -42,9 +56,10 @@ int main()
     };
 
     // Use one rectangle for all particles
-    sf::RectangleShape particleShape;
-    particleShape.setFillColor(sf::Color::White);
-    particleShape.setSize({ 4.f, 4.f});
+    sf::CircleShape particleShape;
+    particleShape.setPointCount(100);
+    particleShape.setFillColor(sf::Color::Cyan);
+    particleShape.setRadius(2);
 
     sf::Clock dt;
     while (window.isOpen())
@@ -62,13 +77,19 @@ int main()
         // Physics step
         world.Step(dt.restart().asSeconds());
 
-        // Generate new particles
-        for (uint32_t i {0}; i < 10; i++)
+        for (const auto& emitter : emitters)
         {
-            Particle::Particle* particle = world.CreateParticle(cfg);
+            for (uint32_t i {0}; i < 10; i++)
+            {
+                // set cfg position
+                cfg.pos = emitter;
 
-            // Randomize initial velocity
-            particle->SetVelocity({dist(gen), dist(gen)});
+                // Create a new particle
+                auto particle = world.CreateParticle(cfg);
+
+                // Set random velocity
+                particle->SetVelocity({ dist(gen), dist(gen) });
+            }
         }
 
         // Draw all particles

@@ -33,11 +33,6 @@ namespace Slinky::Particle
     {
         for (auto& particle : particles)
         {
-            particle->ClearForces();
-        }
-
-        for (auto& particle : particles)
-        {
             particle->ApplyForce(gravity);
         }
 
@@ -63,6 +58,11 @@ namespace Slinky::Particle
             contact = nullptr;
         }
         contacts.clear();
+
+        for (auto& particle : particles)
+        {
+            particle->ClearForces();
+        }
     }
 
     const std::vector<Particle*>& ParticleWorld::Particles() const
@@ -72,10 +72,11 @@ namespace Slinky::Particle
 
     void ParticleWorld::GenerateContacts()
     {
-        for (auto& A : particles)
+        for (auto A : particles)
         {
-            for (auto& B : particles) {
+            for (auto B : particles) {
                 if (A == B) return;
+                std::cout << "collision!\n";
 
                 // If the distance is less than the sum of radii,
                 // the particles are colliding
@@ -91,6 +92,7 @@ namespace Slinky::Particle
                      contact->restitution = std::min(A->Restitution(), B->Restitution());
                      contact->intersection = rSq - distanceSq;
                      contact->normal = (B->Position() - A->Position()).Normal();
+                     std::cout << "Collision!\n";
                 }
             }
         }

@@ -26,7 +26,10 @@ namespace Slinky::Particle
             damping{_cfg.damping},
             radius{_cfg.radius},
             lifetime{_cfg.lifetime}
-    {}
+    {
+        if (_cfg.mass <= 0)
+            invMass = 0.f;
+    }
 
     Math::Vector2 Particle::Position() const
     {
