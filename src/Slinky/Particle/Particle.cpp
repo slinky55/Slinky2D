@@ -45,12 +45,10 @@ namespace Slinky::Particle
     {
         pos = _pos;
     }
-
     void Particle::SetVelocity(const Math::Vector2 &_vel)
     {
         vel = _vel;
     }
-
     void Particle::SetAcceleration(const Math::Vector2 &_acc)
     {
         acc = _acc;
@@ -81,7 +79,6 @@ namespace Slinky::Particle
     {
         return lifetime;
     }
-
     void Particle::Integrate(float _dt)
     {
         if (invMass <= 0.f ||
@@ -96,7 +93,6 @@ namespace Slinky::Particle
 
         lifetime -= _dt;
     }
-
     void Particle::ApplyForce(const Math::Vector2 &_force)
     {
         forces += _force;

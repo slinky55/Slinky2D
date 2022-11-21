@@ -31,6 +31,10 @@ namespace Slinky::Collision
         [[nodiscard]] Math::Vector2 Velocity() const;
         [[nodiscard]] Math::Vector2 Acceleration() const;
 
+        void SetPosition(const Math::Vector2& _pos);
+        void SetVelocity(const Math::Vector2& _vel);
+        void SetAcceleration(const Math::Vector2& _acc);
+
         [[nodiscard]] Math::Vector2 Size() const;
         [[nodiscard]] Math::Vector2 HalfSize() const;
 
@@ -38,6 +42,11 @@ namespace Slinky::Collision
         [[nodiscard]] float InvMass() const;
         [[nodiscard]] float Restitution() const;
         [[nodiscard]] float Damping() const;
+        [[nodiscard]] float Rotation() const;
+
+        void SetMass(float _mass);
+        void SetRestitution(float _res);
+        void SetRotation(float _rot);
 
         [[nodiscard]] const AABB& Collider() const;
 
@@ -63,6 +72,7 @@ namespace Slinky::Collision
         float invMass;
         float restitution;
         float damping;
+        float rotation;
 
         AABB collider;
     };

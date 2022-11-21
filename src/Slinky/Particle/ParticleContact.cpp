@@ -7,7 +7,6 @@ namespace Slinky::Particle
         ResolveImpulse(_dt);
         ResolveIntersection(_dt);
     }
-
     float ParticleContact::SeparatingVelocity() const
     {
         Math::Vector2 relVelocity {
@@ -21,7 +20,7 @@ namespace Slinky::Particle
         return relVelocity * normal;
     }
 
-    void ParticleContact::ResolveImpulse(float _dt)
+    void ParticleContact::ResolveImpulse(float _dt) const
     {
         float separatingVelocity { SeparatingVelocity() };
 
@@ -68,8 +67,7 @@ namespace Slinky::Particle
             );
         }
     }
-
-    void ParticleContact::ResolveIntersection(float _dt)
+    void ParticleContact::ResolveIntersection([[maybe_unused]] float _dt) const
     {
         if (intersection <= 0) return;
 

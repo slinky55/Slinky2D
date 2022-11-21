@@ -21,7 +21,7 @@ int main()
 {
     sf::RenderWindow window;
 
-    Core::World world {{0, 10.f}};
+    Core::World world {{0, 3.4f}};
 
     PhysicsRect box;
 
