@@ -13,8 +13,6 @@ a
 1include/Slinky/Particle/ParticleContactSolver.hpp,1/5/1526aaabe53030a541e042d36304c3bb07337d36
 T
 $src/Slinky/Collision/BodyContact.cpp,8/3/8348d7b7a45add515a8966a927931060a399756e
-M
-include/Slinky/Core/World.hpp,8/7/874ac8f8e6e165c401e7a608058ce26bd56938e7
 W
 'src/Slinky/Particle/ParticleContact.cpp,e/e/eecafd797b34859d62fc28954f5cc494762ac4d7
 B
@@ -25,7 +23,5 @@ Z
 .include/Slinky/Collision/BodyContactSolver.hpp,a/e/ae5103a4022fd0b63eede692d3cc51b337f7efb1
 Q
 !include/Slinky/Collision/AABB.hpp,2/f/2f72cfc9c7e8e8ef93ec96eae2324567fd84b869
-I
-src/Slinky/Core/World.cpp,5/e/5eef176b3df1e6ebec6f359f7853dc63c6bb0388
 U
 %src/Slinky/Particle/ParticleWorld.cpp,0/e/0e4e54018ad369e38f9443981eba157c454dfd99

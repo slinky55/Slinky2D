@@ -3,9 +3,9 @@
 #include <vector>
 #include <algorithm>
 #include <iostream>
+#include <memory>
 
-#include <Slinky/Collision/Body.hpp>
-#include "Slinky/Collision/BodyContactSolver.hpp"
+#include "Slinky/Collision/Body.hpp"
 #include "Slinky/Collision/BodyContact.hpp"
 
 namespace Slinky::Core
@@ -13,24 +13,19 @@ namespace Slinky::Core
     class World
     {
     public:
-        World(const Math::Vector2& _gravity,
-              uint8_t _itr);
-        ~World();
+        explicit World(const Math::Vector2& _gravity);
+        ~World() = default;
 
-        Collision::Body*    CreateBody(const Collision::BodyCfg& _cfg);
-        void                DestroyBody(Collision::Body* _body);
+        std::shared_ptr<Collision::Body>    CreateBody(const Collision::BodyCfg& _cfg);
+        void                                DestroyBody(std::shared_ptr<Collision::Body> const& _body);
 
-        void Step(float _dt);
+        void Step(float _dt) const;
 
-        std::vector<Collision::Body*>& Bodies();
+        [[nodiscard]] const std::vector<std::shared_ptr<Collision::Body>>& Bodies() const;
     private:
-        std::vector<Collision::Body*> bodies;
-        std::vector<Collision::BodyContact*> contacts;
-
-        Collision::BodyContactSolver solver;
+        std::vector<std::shared_ptr<Collision::Body>> bodies;
+        std::vector<std::shared_ptr<Collision::BodyContact>> contacts;
 
         Math::Vector2 gravity;
-
-        void GenerateContacts();
     };
 }
