@@ -1,5 +1,7 @@
 #pragma once
 
+#include <array>
+
 #include "Slinky/Collision/Body.hpp"
 
 namespace Slinky::Collision
@@ -7,7 +9,7 @@ namespace Slinky::Collision
     class BodyContact
     {
     public:
-        Body* bodies[2];
+        std::array<Body*, 2> bodies;
 
         float restitution;
         float intersection;

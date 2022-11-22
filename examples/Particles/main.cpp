@@ -1,5 +1,4 @@
 #include <random>
-#include <array>
 
 #include <SFML/Graphics.hpp>
 
@@ -7,7 +6,7 @@
 #include <Slinky/Particle/ParticleWorld.hpp>
 #include <Slinky/Math/Vector2.hpp>
 
-constexpr float PIXELS_PER_METER {30.f};
+constexpr float PIXELS_PER_METER {32.f};
 
 using namespace Slinky;
 
@@ -25,41 +24,37 @@ int main()
      * and collision detection/resolution.
      */
     Particle::ParticleWorld world {
-        {0.f, 3.2},
+        {0.f, 9.8f},
         8
     };
 
-    // emitter positions
-    std::vector<Math::Vector2> emitters {
-        { 350.f / PIXELS_PER_METER, 300.f / PIXELS_PER_METER },
-        { 360.f / PIXELS_PER_METER, 300.f / PIXELS_PER_METER },
-        { 370.f / PIXELS_PER_METER, 300.f / PIXELS_PER_METER },
-        { 380.f / PIXELS_PER_METER, 300.f / PIXELS_PER_METER },
-        { 390.f / PIXELS_PER_METER, 300.f / PIXELS_PER_METER },
-        { 400.f / PIXELS_PER_METER, 300.f / PIXELS_PER_METER },
-        { 410.f / PIXELS_PER_METER, 300.f / PIXELS_PER_METER },
-        { 420.f / PIXELS_PER_METER, 300.f / PIXELS_PER_METER },
-        { 430.f / PIXELS_PER_METER, 300.f / PIXELS_PER_METER },
-        { 440.f / PIXELS_PER_METER, 300.f / PIXELS_PER_METER },
-        { 450.f / PIXELS_PER_METER, 300.f / PIXELS_PER_METER }
-    };
-
+    // Particle Emitter position
+    Math::Vector2 emitterPos { 400.f / PIXELS_PER_METER, 200.f / PIXELS_PER_METER };
 
     // Define config for all particles
     Particle::ParticleCfg cfg {
-        emitters[0],
+        emitterPos,
         2 / PIXELS_PER_METER,
         10.f,
-        0,
+        0.3f,
         0.99f,
         2.f
     };
 
-    // Use one rectangle for all particles
+    // Use one circle for all particles
     sf::CircleShape particleShape;
     particleShape.setPointCount(100);
     particleShape.setFillColor(sf::Color::Cyan);
     particleShape.setRadius(2);
+
+    for (uint32_t i {0}; i < 10; i++)
+    {
+        // Create a new particle
+        auto particle { world.CreateParticle(cfg) };
+
+        // Set random velocity
+        particle->SetVelocity({ dist(gen), dist(gen) });
+    }
 
     sf::Clock dt;
     while (window.isOpen())
@@ -77,29 +72,26 @@ int main()
         // Physics step
         world.Step(dt.restart().asSeconds());
 
-        for (const auto& emitter : emitters)
+        for (uint32_t i {0}; i < 10; i++)
         {
-            for (uint32_t i {0}; i < 10; i++)
-            {
-                // set cfg position
-                cfg.pos = emitter;
+            // Create a new particle
+            auto particle { world.CreateParticle(cfg) };
 
-                // Create a new particle
-                auto particle = world.CreateParticle(cfg);
-
-                // Set random velocity
-                particle->SetVelocity({ dist(gen), dist(gen) });
-            }
+            // Set random velocity
+            particle->SetVelocity({ dist(gen), dist(gen) });
         }
 
         // Draw all particles
         window.clear();
+
+        particleShape.setRadius(cfg.radius * PIXELS_PER_METER);
         for (auto const& particle : world.Particles())
         {
             particleShape.setPosition({particle->Position().x * PIXELS_PER_METER,
                                        particle->Position().y * PIXELS_PER_METER});
             window.draw(particleShape);
         }
+
         window.display();
     }
 

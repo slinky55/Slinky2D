@@ -24,22 +24,22 @@ int main()
     Core::World world {{0, 10.f}, 8 };
 
     // Box
-    world.CreateBody({
+    Collision::Body* box {world.CreateBody({
         {400 / PIXELS_PER_METER, 100 / PIXELS_PER_METER},
         { 20 / PIXELS_PER_METER, 20 / PIXELS_PER_METER},
         70,
         .5f,
         .9f
-    });
+    })};
 
     // Ground
-    world.CreateBody({
+    Collision::Body* ground {world.CreateBody({
          {400 / PIXELS_PER_METER,  (600 - 16) / PIXELS_PER_METER},
          { 800 / PIXELS_PER_METER, 32 / PIXELS_PER_METER},
          0,
          .5f,
          .9f
-    });
+    })};
 
     // Set up SFML
 

@@ -17,5 +17,6 @@ namespace Slinky::Collision
 
         [[nodiscard]] bool Intersects(const AABB& _other) const;
         [[nodiscard]] bool Contains(const AABB& _other) const;
+        [[nodiscard]] bool Contains(const Vector2& _point) const;
     };
 }

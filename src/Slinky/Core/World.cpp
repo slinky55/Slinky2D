@@ -27,7 +27,8 @@ namespace Slinky::Core
     void World::DestroyBody(Collision::Body *_body)
     {
         bodies.erase(
-                std::remove(bodies.begin(), bodies.end(), _body), bodies.end());
+                std::remove(bodies.begin(), bodies.end(), _body),
+                bodies.end());
     }
 
     std::vector<Collision::Body*>& World::Bodies()
@@ -68,10 +69,10 @@ namespace Slinky::Core
 
     void World::GenerateContacts()
     {
-        for (auto& A : bodies)
+        for (auto A : bodies)
         {
-            for (auto& B : bodies) {
-                //if (A == B) return;
+            for (auto B : bodies) {
+                if (A == B) continue;
 
                 if (A->collider.Intersects(B->collider))
                 {
@@ -88,8 +89,6 @@ namespace Slinky::Core
                     contact->intersection = (totalHSize - dist) * contact->normal;
 
                     contact->restitution = std::min(A->restitution, B->restitution);
-
-                    std::cout << "Contact!\n";
                 }
             }
         }

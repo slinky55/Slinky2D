@@ -51,6 +51,7 @@ target_link_libraries(Particles
         ${PROJECT_NAME}
         sfml-system sfml-graphics sfml-window)
 
+
 # tests
 include(GoogleTest)
 
@@ -59,6 +60,13 @@ enable_testing()
 add_executable(AABBTest tests/AABBTest.cpp)
 target_link_libraries(
         AABBTest
+        GTest::gtest_main
+        ${PROJECT_NAME}
+)
+
+add_executable(ParticleTreeTest tests/ParticleQuadTreeTest.cpp)
+target_link_libraries(
+        ParticleTreeTest
         GTest::gtest_main
         ${PROJECT_NAME}
 )

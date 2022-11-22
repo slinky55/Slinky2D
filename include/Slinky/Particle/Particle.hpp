@@ -49,11 +49,9 @@ namespace Slinky::Particle
 
         void Integrate(float _dt);
 
-    private:
-        friend class ParticleWorld;
-
         explicit Particle(const ParticleCfg& _cfg);
 
+    private:
         Math::Vector2 pos;
         Math::Vector2 vel;
         Math::Vector2 acc;

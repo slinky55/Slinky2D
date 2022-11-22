@@ -89,8 +89,9 @@ namespace Slinky::Particle
             return;
 
         pos += vel * _dt;
-        acc += forces * invMass;
-        vel += acc * _dt;
+        Math::Vector2 resultingAcc = acc;
+        resultingAcc += forces * invMass;
+        vel += resultingAcc * _dt;
 
         vel *= powf(damping, _dt);
 

@@ -3,11 +3,6 @@
 #include <Slinky/Math/Vector2.hpp>
 #include <Slinky/Collision/AABB.hpp>
 
-namespace Slinky::Core
-{
-    class World;
-}
-
 namespace Slinky::Collision
 {
     struct BodyCfg
@@ -17,16 +12,13 @@ namespace Slinky::Collision
         float mass;
         float restitution;
         float damping;
-
-        BodyCfg(const Math::Vector2& _pos,
-                const Math::Vector2& _size,
-                float _mass,
-                float _restitution,
-                float _damping);
     };
 
-    struct Body
+    class Body
     {
+    public:
+        explicit Body(const BodyCfg& _cfg);
+
         [[nodiscard]] Math::Vector2 Position() const;
         [[nodiscard]] Math::Vector2 Velocity() const;
         [[nodiscard]] Math::Vector2 Acceleration() const;
@@ -56,10 +48,6 @@ namespace Slinky::Collision
         void ClearForces();
 
     private:
-        friend class Core::World;
-
-        explicit Body(const BodyCfg& _cfg);
-
         Math::Vector2 pos;
         Math::Vector2 vel {0, 0};
         Math::Vector2 acc {0, 0};
