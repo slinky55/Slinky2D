@@ -6,12 +6,20 @@ TEST (AABBTest, Intersection)
 {
     using namespace Slinky::Collision;
 
-    AABB box1 {{2, 4}, {2, 2}};
-    AABB box2 {{4, 2}, {2, 2}};
+    constexpr float PIXELS_PER_METER {32.f};
 
-    AABB box3 {{2, 4}, {2, 2}};
-    AABB box4 {{8, 2}, {2, 2}};
+    AABB box {
+        { 400 / PIXELS_PER_METER, (600 - 45) / PIXELS_PER_METER},
+        {16.f / PIXELS_PER_METER, 16.f / PIXELS_PER_METER}
+    };
 
-    EXPECT_EQ(true, box1.Intersects(box2)) << "boxes SHOULD intersect";
-    EXPECT_EQ(false, box3.Intersects(box4)) << "boxes should NOT intersect";
+    AABB ground {
+        {400.f / PIXELS_PER_METER, (600 - 16) / PIXELS_PER_METER},
+        {400 / PIXELS_PER_METER, 16 / PIXELS_PER_METER}
+    };
+
+    EXPECT_EQ(true, box.Intersects(ground));
+
+    box.center = { 400 / PIXELS_PER_METER, (600 - 49) / PIXELS_PER_METER};
+    EXPECT_EQ(false, box.Intersects(ground));
 }

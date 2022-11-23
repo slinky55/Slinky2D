@@ -10,7 +10,7 @@ namespace Slinky::Particle
     float ParticleContact::SeparatingVelocity() const
     {
         Math::Vector2 relVelocity {
-            particles[1]
+             particles[1]
             ?
             (particles[0]->Velocity() - particles[1]->Velocity())
             :
@@ -26,7 +26,7 @@ namespace Slinky::Particle
 
         if (separatingVelocity > 0) return;
 
-        float newVelocity { separatingVelocity * restitution };
+        float newVelocity { -separatingVelocity * restitution };
 
         Math::Vector2 velocityFromAcc {
             particles[1]
@@ -52,18 +52,18 @@ namespace Slinky::Particle
             (particles[0]->InvMass())
         };
 
-        if (totalInvMass < 0) return;
+        if (totalInvMass <= 0) return;
 
         float impulse { deltaV / totalInvMass };
         Math::Vector2 impulsePerInvMass { normal * impulse };
 
         particles[0]->SetVelocity(
-        particles[0]->Velocity() + impulsePerInvMass * particles[0]->InvMass()
+            particles[0]->Velocity() + (impulsePerInvMass * particles[0]->InvMass())
         );
         if (particles[1])
         {
             particles[1]->SetVelocity(
-                    particles[1]->Velocity() + impulsePerInvMass * particles[1]->InvMass()
+                    particles[1]->Velocity() + (impulsePerInvMass * -particles[1]->InvMass())
             );
         }
     }
@@ -91,7 +91,7 @@ namespace Slinky::Particle
         if (particles[1])
         {
             particles[1]->SetPosition(
-            particles[1]->Position() + movePerInvMass * particles[1]->InvMass()
+                particles[1]->Position() + movePerInvMass * particles[1]->InvMass()
             );
         }
     }

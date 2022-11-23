@@ -6,7 +6,7 @@
 #include "Slinky/Math/Vector2.hpp"
 
 #include "Slinky/Particle/Particle.hpp"
-#include "Slinky/Particle/ParticleContactSolver.hpp"
+#include "Slinky/Particle/ParticleContact.hpp"
 
 #include "Slinky/Containers/ParticleQuadTree.hpp"
 
@@ -15,8 +15,7 @@ namespace Slinky::Particle
     class ParticleWorld
     {
     public:
-        explicit ParticleWorld(const Math::Vector2& _grav,
-                               uint8_t _itr);
+        explicit ParticleWorld(const Math::Vector2& _grav);
         ~ParticleWorld();
 
         Particle* CreateParticle(const ParticleCfg& _cfg);
@@ -28,8 +27,6 @@ namespace Slinky::Particle
     private:
         std::vector<Particle*> particles;
         std::vector<ParticleContact*> contacts;
-
-        ParticleContactSolver solver;
 
         Math::Vector2 gravity;
 

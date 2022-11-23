@@ -96,6 +96,8 @@ namespace Slinky::Particle
         vel *= powf(damping, _dt);
 
         lifetime -= _dt;
+
+        ClearForces();
     }
     void Particle::ApplyForce(const Math::Vector2 &_force)
     {
@@ -103,6 +105,6 @@ namespace Slinky::Particle
     }
     void Particle::ClearForces()
     {
-        acc.Zero();
+        forces.Zero();
     }
 }

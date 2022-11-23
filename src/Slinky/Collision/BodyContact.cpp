@@ -27,7 +27,7 @@ namespace Slinky::Collision
 
         if (separatingVelocity > 0) return;
 
-        float newVelocity { separatingVelocity * restitution };
+        float newVelocity { -separatingVelocity * restitution };
 
         Math::Vector2 velocityFromAcc {
                 bodies[1]
@@ -53,7 +53,7 @@ namespace Slinky::Collision
                 (bodies[0]->InvMass())
         };
 
-        if (totalInvMass < 0) return;
+        if (totalInvMass <= 0) return;
 
         float impulse { deltaV / totalInvMass };
         Math::Vector2 impulsePerInvMass { normal * impulse };
@@ -64,7 +64,7 @@ namespace Slinky::Collision
         if (bodies[1])
         {
             bodies[1]->SetVelocity(
-                    bodies[1]->Velocity() + impulsePerInvMass * bodies[1]->InvMass()
+                    bodies[1]->Velocity() + impulsePerInvMass * -bodies[1]->InvMass()
             );
         }
     }
@@ -88,7 +88,7 @@ namespace Slinky::Collision
         };
 
         bodies[0]->SetPosition(
-                bodies[0]->Position() + movePerInvMass * bodies[0]->InvMass()
+            bodies[0]->Position() + movePerInvMass * bodies[0]->InvMass()
         );
         if (bodies[1])
         {

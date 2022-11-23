@@ -1,60 +1,72 @@
-#include <iostream>
-#include <cassert>
+#include <random>
 
 #include <SFML/Graphics.hpp>
 
-#include <Slinky/Math/Vector2.hpp>
-#include <Slinky/Collision/Body.hpp>
 #include <Slinky/Core/World.hpp>
 
+// Needed for Slinky2D to work in meters
 constexpr float PIXELS_PER_METER {32.f};
 
 using namespace Slinky;
 
-struct PhysicsRect
+int main(int argc, char** argv)
 {
-    sf::RectangleShape rect;
-    Collision::Body *body {nullptr};
-};
+    if (argc != 2)
+    {
+        std::cout << "Usage: " << argv[0] << " <box count>\n";
+        return -1;
+    }
 
-int main()
-{
-    // Set up physics objects
-
-    Core::World world {{0, 10.f}, 8 };
-
-    // Box
-    Collision::Body* box {world.CreateBody({
-        {400 / PIXELS_PER_METER, 100 / PIXELS_PER_METER},
-        { 20 / PIXELS_PER_METER, 20 / PIXELS_PER_METER},
-        70,
-        .5f,
-        .9f
-    })};
-
-    // Ground
-    Collision::Body* ground {world.CreateBody({
-         {400 / PIXELS_PER_METER,  (600 - 16) / PIXELS_PER_METER},
-         { 800 / PIXELS_PER_METER, 32 / PIXELS_PER_METER},
-         0,
-         .5f,
-         .9f
-    })};
+    // For random numbers
+    std::random_device rd;
+    std::mt19937 gen(rd());
+    std::uniform_real_distribution<float> xRange(100, 700);
+    std::uniform_real_distribution<float> yRange(100, 500);
 
     // Set up SFML
-
     sf::RenderWindow window;
+    window.create(sf::VideoMode{{800, 600}}, "Example - Falling Box");
+    if (!window.isOpen())
+    {
+        std::cout << "Failed to create SFML Window\n";
+        return -1;
+    }
 
-    window.create(sf::VideoMode{{800, 600}}, "Example - Bounding Test");
-    assert(window.isOpen() && "Failed to created SFML Window");
+    // Create physics world
+    Core::World world { {0, 9.81f} };
+
+    // Box Config
+    Collision::BodyCfg cfg {
+            {0, 0},
+            { 32.f / PIXELS_PER_METER, 32.f / PIXELS_PER_METER },
+            70.f,
+            0.3f,
+            0.9f
+    };
+
+    // Create physics body for ground
+    world.CreateBody({
+        { 400.f / PIXELS_PER_METER, (600.f - 16) / PIXELS_PER_METER },
+        { 800.f / PIXELS_PER_METER, 32.f / PIXELS_PER_METER },
+        0.f,
+        0.3f,
+        0.f
+    });
 
     // Rect used for drawing, will use same rect for box and floor
     sf::RectangleShape rect;
     rect.setFillColor(sf::Color::White);
 
+    for (std::size_t i {0}; i < (std::stoi(argv[1])); i++)
+    {
+        cfg.pos = { xRange(gen) / PIXELS_PER_METER, yRange(gen) / PIXELS_PER_METER };
+        world.CreateBody(cfg);
+    }
+
     sf::Clock dt;
     while (window.isOpen())
     {
+        // Event handling
         sf::Event e {};
         while (window.pollEvent(e))
         {
@@ -64,10 +76,17 @@ int main()
             }
         }
 
+        if (sf::Keyboard::isKeyPressed(sf::Keyboard::Escape))
+        {
+            window.close();
+        }
+
+        // Step physics world
         world.Step(dt.restart().asSeconds());
 
+        // Draw code
         window.clear();
-        for (auto& body : world.Bodies())
+        for (auto const& body : world.Bodies())
         {
             rect.setPosition({
                 (body->Position().x - body->HalfSize().x) * PIXELS_PER_METER,

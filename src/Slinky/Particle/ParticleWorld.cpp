@@ -2,10 +2,8 @@
 
 namespace Slinky::Particle
 {
-    ParticleWorld::ParticleWorld(const Math::Vector2& _grav,
-                                 uint8_t _itr)
+    ParticleWorld::ParticleWorld(const Math::Vector2& _grav)
         :
-        solver{_itr},
         gravity{_grav}
     {}
 
@@ -33,7 +31,11 @@ namespace Slinky::Particle
     {
         for (auto& particle : particles)
         {
-            particle->ApplyForce(gravity);
+            // If particle has infinite mass,
+            // don't apply gravity
+            if (particle->Mass() == 0.f) continue;
+
+            particle->ApplyForce(gravity * particle->Mass());
         }
 
         for (auto& particle : particles)
@@ -45,7 +47,6 @@ namespace Slinky::Particle
                 DestroyParticle(particle);
             }
         }
-
         Containers::ParticleQuadTree quadTree{
                 {
                     {0.f, 0.f},
@@ -62,8 +63,6 @@ namespace Slinky::Particle
         std::vector<std::pair<Particle*, Particle*>> pairs;
         quadTree.GetPairs(pairs);
 
-
-
         for (auto const& [A, B] : pairs)
         {
             float distanceSq {std::powf((B->Position().x - A->Position().x), 2) +
@@ -76,8 +75,8 @@ namespace Slinky::Particle
                 contact->particles[0] = A;
                 contact->particles[1] = B;
                 contact->restitution = std::min(A->Restitution(), B->Restitution());
-                contact->intersection = rSq - distanceSq;
                 contact->normal = (B->Position() - A->Position()).Normal();
+                contact->intersection = (rSq - distanceSq);
             }
         }
 
@@ -87,11 +86,6 @@ namespace Slinky::Particle
         }
 
         contacts.clear();
-
-        for (auto& particle : particles)
-        {
-            particle->ClearForces();
-        }
     }
 
     const std::vector<Particle*>& ParticleWorld::Particles() const

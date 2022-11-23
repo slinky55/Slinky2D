@@ -7,6 +7,7 @@
 
 #include "Slinky/Collision/Body.hpp"
 #include "Slinky/Collision/BodyContact.hpp"
+#include "Slinky/Containers/BodyQuadTree.hpp"
 
 namespace Slinky::Core
 {
@@ -17,11 +18,11 @@ namespace Slinky::Core
         ~World() = default;
 
         std::shared_ptr<Collision::Body>    CreateBody(const Collision::BodyCfg& _cfg);
-        void                                DestroyBody(std::shared_ptr<Collision::Body> const& _body);
-
-        void Step(float _dt) const;
+        [[maybe_unused]] void               DestroyBody(std::shared_ptr<Collision::Body> const& _body);
 
         [[nodiscard]] const std::vector<std::shared_ptr<Collision::Body>>& Bodies() const;
+
+        void Step(float _dt);
     private:
         std::vector<std::shared_ptr<Collision::Body>> bodies;
         std::vector<std::shared_ptr<Collision::BodyContact>> contacts;

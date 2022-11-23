@@ -2,31 +2,20 @@
 
 namespace Slinky::Collision {
 
-    BodyCfg::BodyCfg(const Math::Vector2 &_pos,
-                     const Math::Vector2 &_size,
-                     float _mass,
-                     float _restitution,
-                     float _damping)
-            :
-            pos{_pos},
-            size{_size},
-            mass{_mass},
-            restitution{_restitution},
-            damping{_damping} {}
-
     Body::Body(const BodyCfg &_cfg)
             :
             pos{_cfg.pos},
             size{_cfg.size},
             mass{_cfg.mass},
-            invMass{1.f / _cfg.mass},
             restitution{_cfg.restitution},
             damping{_cfg.damping},
             collider{_cfg.pos,
                      _cfg.size / 2.f}
     {
-        if (mass == 0.f)
+        if (mass <= 0.f)
             invMass = 0.f;
+        else
+            invMass = 1.f / _cfg.mass;
     }
 
     Math::Vector2 Body::Position() const {
@@ -42,6 +31,7 @@ namespace Slinky::Collision {
     void Body::SetPosition(const Math::Vector2& _pos)
     {
         pos = _pos;
+        collider.center = pos;
     }
     void Body::SetVelocity(const Math::Vector2 &_vel)
     {
@@ -97,15 +87,20 @@ namespace Slinky::Collision {
 
     void Body::Integrate(float _dt)
     {
-        if (_dt < 0.f) return;
+        if (invMass <= 0.f ||
+            _dt < 0.f)
+            return;
 
         pos += vel * _dt;
-        acc += forces * invMass;
-        vel += acc * _dt;
-
         collider.center = pos;
 
+        Math::Vector2 resultingAcc = acc;
+        resultingAcc += forces * invMass;
+        vel += resultingAcc * _dt;
+
         vel *= powf(damping, _dt);
+
+        ClearForces();
     }
     void Body::ApplyForce(const Math::Vector2& _force)
     {
@@ -113,6 +108,6 @@ namespace Slinky::Collision {
     }
     void Body::ClearForces()
     {
-        acc.Zero();
+        forces.Zero();
     }
 }
