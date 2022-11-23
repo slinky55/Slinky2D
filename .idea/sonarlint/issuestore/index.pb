@@ -19,7 +19,3 @@ P
  src/Slinky/Particle/Particle.cpp,5/9/592b91a5aca1e466d02db50ce50bbb21558a9897
 [
 +include/Slinky/Particle/ParticleContact.hpp,0/a/0acd7536c3d878e464d8513a01530f7fbb0a36e8
-U
-%src/Slinky/Particle/ParticleWorld.cpp,0/e/0e4e54018ad369e38f9443981eba157c454dfd99
-Y
-)include/Slinky/Particle/ParticleWorld.hpp,3/3/336c11e4d6489bc86acf8af03091c9cb03b96a8f

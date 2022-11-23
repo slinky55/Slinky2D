@@ -29,7 +29,6 @@ int main()
 
     // Particle Emitter position
     Math::Vector2 emitterPos { 400.f / PIXELS_PER_METER, 200.f / PIXELS_PER_METER };
-    Math::Vector2 emitterPos2 { 400.f / PIXELS_PER_METER, 400.f / PIXELS_PER_METER };
 
     // Define config for all particles
     Particle::ParticleCfg cfg {
@@ -38,7 +37,7 @@ int main()
         10.f,
         0.9f,
         0.9f,
-        2.f
+        5.f
     };
 
     // Use one circle for all particles
@@ -62,19 +61,6 @@ int main()
 
         // Physics step
         world.Step(dt.restart().asSeconds());
-
-        cfg.pos = emitterPos;
-
-        for (uint32_t i {0}; i < 10; i++)
-        {
-            // Create a new particle
-            auto particle { world.CreateParticle(cfg) };
-
-            // Set random velocity
-            particle->SetVelocity({ dist(gen), dist(gen) });
-        }
-
-        cfg.pos = emitterPos2;
 
         for (uint32_t i {0}; i < 10; i++)
         {
