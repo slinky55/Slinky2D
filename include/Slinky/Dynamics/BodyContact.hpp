@@ -2,9 +2,9 @@
 
 #include <array>
 
-#include "Slinky/Collision/Body.hpp"
+#include "Slinky/Dynamics/Body.hpp"
 
-namespace Slinky::Collision
+namespace Slinky::Dynamics
 {
     class BodyContact
     {
@@ -22,4 +22,6 @@ namespace Slinky::Collision
         void ResolveImpulse(float _dt) const;
         void ResolveIntersection(float _dt) const;
     };
+
+
 }

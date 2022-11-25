@@ -2,7 +2,7 @@
 
 #include <SFML/Graphics.hpp>
 
-#include <Slinky/Core/World.hpp>
+#include "Slinky/Dynamics/World.hpp"
 
 // Needed for Slinky2D to work in meters
 constexpr float PIXELS_PER_METER {32.f};
@@ -21,7 +21,7 @@ int main(int argc, char** argv)
     std::random_device rd;
     std::mt19937 gen(rd());
     std::uniform_real_distribution<float> xRange(100, 700);
-    std::uniform_real_distribution<float> yRange(100, 500);
+    std::uniform_real_distribution<float> yRange(50, 200);
 
     // Set up SFML
     sf::RenderWindow window;
@@ -31,39 +31,36 @@ int main(int argc, char** argv)
         std::cout << "Failed to create SFML Window\n";
         return -1;
     }
+    window.setFramerateLimit(60);
 
     // Create physics world
-    Core::World world { {0, 9.81f} };
+    Dynamics::DWorld world { {0, 9.81f} };
 
-    // Box Config
-    Collision::BodyCfg cfg {
-            {0, 0},
-            { 32.f / PIXELS_PER_METER, 32.f / PIXELS_PER_METER },
-            70.f,
-            0.3f,
-            0.9f
-    };
-
-    // Create physics body for ground
-    world.CreateBody({
-        { 400.f / PIXELS_PER_METER, (600.f - 16) / PIXELS_PER_METER },
-        { 800.f / PIXELS_PER_METER, 32.f / PIXELS_PER_METER },
+    // Create physics box
+    auto* box { world.CreateBody({
+        { xRange(gen) / PIXELS_PER_METER,
+          yRange(gen) / PIXELS_PER_METER },
         0.f,
+        { 32.f / PIXELS_PER_METER, 32.f / PIXELS_PER_METER },
+        70.f,
         0.3f,
-        0.f
-    });
+        0.9f,
+        0.1f
+    })};
 
     // Rect used for drawing, will use same rect for box and floor
     sf::RectangleShape rect;
     rect.setFillColor(sf::Color::White);
-
-    for (std::size_t i {0}; i < (std::stoi(argv[1])); i++)
-    {
-        cfg.pos = { xRange(gen) / PIXELS_PER_METER, yRange(gen) / PIXELS_PER_METER };
-        world.CreateBody(cfg);
-    }
+    rect.setOrigin({box->halfSize.x * PIXELS_PER_METER, box->halfSize.y * PIXELS_PER_METER});
+    rect.setPosition({box->position.x * PIXELS_PER_METER, box->position.y * PIXELS_PER_METER});
+    rect.setSize({box->size.x * PIXELS_PER_METER, box->size.y * PIXELS_PER_METER});
+    rect.setRotation(sf::radians(box->orientation));
 
     sf::Clock dt;
+
+    // Prevent applying too much rotational force
+    bool spinning { false };
+
     while (window.isOpen())
     {
         // Event handling
@@ -81,21 +78,19 @@ int main(int argc, char** argv)
             window.close();
         }
 
-        // Step physics world
+        if (sf::Keyboard::isKeyPressed(sf::Keyboard::Space) && !spinning)
+        {
+            Dynamics::ApplyForceToPoint(box, {-1.f, 0.5f}, {20.f, 0.f});
+            spinning = true;
+        }
+
         world.Step(dt.restart().asSeconds());
 
         // Draw code
         window.clear();
-        for (auto const& body : world.Bodies())
-        {
-            rect.setPosition({
-                (body->Position().x - body->HalfSize().x) * PIXELS_PER_METER,
-                (body->Position().y - body->HalfSize().y) * PIXELS_PER_METER
-            });
-            rect.setSize({body->Size().x * PIXELS_PER_METER,
-                          body->Size().y * PIXELS_PER_METER});
-            window.draw(rect);
-        }
+        rect.setPosition({box->position.x * PIXELS_PER_METER, box->position.y * PIXELS_PER_METER});
+        rect.setRotation(sf::radians(box->orientation));
+        window.draw(rect);
         window.display();
     }
 

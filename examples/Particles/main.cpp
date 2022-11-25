@@ -18,6 +18,7 @@ int main()
     std::uniform_real_distribution<float> dist(-3, 3);
 
     sf::RenderWindow window { sf::VideoMode{{800, 600}}, "Particles" };
+    window.setFramerateLimit(60);
 
     /*
      * Holds list of particles, handles integration,
@@ -33,7 +34,7 @@ int main()
     // Define config for all particles
     Particle::ParticleCfg cfg {
         emitterPos,
-        2 / PIXELS_PER_METER,
+        .5f / PIXELS_PER_METER,
         10.f,
         0.9f,
         0.9f,
@@ -60,7 +61,10 @@ int main()
         }
 
         // Physics step
-        world.Step(dt.restart().asSeconds());
+        if (dt.getElapsedTime().asSeconds() >= 1.f / 60.f)
+        {
+            world.Step(dt.restart().asSeconds());
+        }
 
         for (uint32_t i {0}; i < 10; i++)
         {
