@@ -1,7 +1,7 @@
 file(REMOVE_RECURSE
-  "../../../../build-debug/bin/libgmockpdb_debug_postfix-NOTFOUND.pdb"
-  "../../../../build-debug/lib/libgmock.1.12.1.dylib"
-  "../../../../build-debug/lib/libgmock.dylib"
+  "/Users/shaft/Slinky2D/build-debug/bin/libgmockpdb_debug_postfix-NOTFOUND.pdb"
+  "/Users/shaft/Slinky2D/build-debug/lib/libgmock.1.12.1.dylib"
+  "/Users/shaft/Slinky2D/build-debug/lib/libgmock.dylib"
   "CMakeFiles/gmock.dir/src/gmock-all.cc.o"
   "CMakeFiles/gmock.dir/src/gmock-all.cc.o.d"
 )

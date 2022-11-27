@@ -12,7 +12,7 @@ namespace Slinky::Containers
     void ParticleQuadTree::Insert(Particle::Particle* particle)
     {
         // If the particle isn't inside this quadtree's bounds, return
-        if (!bounds.Contains(particle->Position())) return;
+        if (!Collision::Contains(bounds, particle->Position())) return;
 
         if (isLeaf)
         {

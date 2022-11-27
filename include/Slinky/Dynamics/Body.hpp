@@ -70,7 +70,7 @@ namespace Slinky::Dynamics
         _body->forces.Zero();
     }
 
-    inline void IntegrateBody(Body* _body,
+    inline void  IntegrateBody(Body* _body,
                               float _dt)
     {
         if (_body->invMass <= 0.f ||
@@ -78,6 +78,7 @@ namespace Slinky::Dynamics
             return;
 
         _body->position += _body->linearVelocity * _dt;
+        _body->collider.center = _body->position;
         _body->orientation += _body->angularVelocity * _dt;
 
         _body->linearVelocity += _body->forces * (_body->invMass * _dt);

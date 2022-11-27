@@ -33,5 +33,4 @@ namespace Slinky::Math
 
         void Zero();
     };
-
 }

@@ -1,14 +1,23 @@
 #pragma once
 
 #include <vector>
+#include <array>
 #include <algorithm>
 #include <iostream>
 #include <memory>
 
 #include "Slinky/Dynamics/Body.hpp"
+#include "Slinky/Dynamics/BodyContact.hpp"
+
+#include "Slinky/Containers/BodyQuadTree.hpp"
+
+#include "Slinky/Dynamics/Solvers.hpp"
 
 namespace Slinky::Dynamics
 {
+    using BroadPhaseList = std::vector<std::pair<Body*, Body*>>;
+    using NarrowPhaseList = std::vector<std::unique_ptr<BodyContact>>;
+
     class DWorld
     {
     public:
@@ -38,11 +47,71 @@ namespace Slinky::Dynamics
          */
         void Step(float _dt)
         {
+            Containers::BodyQuadTree tree {
+                    {{0.f, 0.f}, {800.f / 32.f, 600.f / 32.f}},
+                    0
+            };
+
             for (auto const& body : m_bodies)
             {
                 ApplyForceToCM(body.get(), m_gravity * body->mass);
                 IntegrateBody(body.get(), _dt);
+
+                tree.Insert(body.get());
             }
+
+            BroadPhaseList broadList;
+            tree.GetPairs(broadList);
+
+            NarrowPhaseList narrowList;
+            for (auto const& [A, B] : broadList)
+            {
+                if (auto intersection { Collision::AABBvsAABB(A->collider, B->collider) };
+                    intersection)
+                {
+
+                    auto const& contact { narrowList.emplace_back(std::make_unique<BodyContact>()) };
+
+                    contact->bodies[0] = A;
+                    contact->bodies[1] = B;
+
+                    if (intersection->x < intersection->y)
+                    {
+                        if (A->position.x < B->position.x)
+                        {
+                            contact->normal = {-1.f, 0.f};
+                        }
+                        else
+                        {
+                            contact->normal = {1.f, 0.f};
+                        }
+                        contact->intersection = intersection->x;
+                    }
+                    else if (intersection->x > intersection->y)
+                    {
+                        if (A->position.y < B->position.y)
+                        {
+                            contact->normal = {0.f, -1.f};
+                        }
+                        else
+                        {
+                            contact->normal = {0.f, 1.f};
+                        }
+                        contact->intersection = intersection->y;
+                    }
+                    else
+                    {
+                        contact->normal = intersection->Normal();
+                        contact->intersection = intersection->Magnitude();
+                    }
+
+                    contact->restitution = std::min(A->restitution, B->restitution);
+                }
+
+            }
+
+            SolveImpulses(narrowList, _dt);
+            SolvePositionsSmooth(narrowList, _dt);
 
             for (auto const& body : m_bodies)
             {
@@ -54,6 +123,4 @@ namespace Slinky::Dynamics
 
         std::vector<std::unique_ptr<Body>> m_bodies;
     };
-
-
 }

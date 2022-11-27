@@ -1,7 +1,7 @@
 file(REMOVE_RECURSE
-  "../../../../build-debug/bin/libgtestpdb_debug_postfix-NOTFOUND.pdb"
-  "../../../../build-debug/lib/libgtest.1.12.1.dylib"
-  "../../../../build-debug/lib/libgtest.dylib"
+  "/Users/shaft/Slinky2D/build-debug/bin/libgtestpdb_debug_postfix-NOTFOUND.pdb"
+  "/Users/shaft/Slinky2D/build-debug/lib/libgtest.1.12.1.dylib"
+  "/Users/shaft/Slinky2D/build-debug/lib/libgtest.dylib"
   "CMakeFiles/gtest.dir/src/gtest-all.cc.o"
   "CMakeFiles/gtest.dir/src/gtest-all.cc.o.d"
 )

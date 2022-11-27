@@ -31,7 +31,6 @@ int main(int argc, char** argv)
         std::cout << "Failed to create SFML Window\n";
         return -1;
     }
-    window.setFramerateLimit(60);
 
     // Create physics world
     Dynamics::DWorld world { {0, 9.81f} };
@@ -48,13 +47,30 @@ int main(int argc, char** argv)
         0.1f
     })};
 
+    world.CreateBody({
+        { box->position.x,
+          box->position.y - 2.f },
+        0.f,
+        { 32.f / PIXELS_PER_METER, 32.f / PIXELS_PER_METER },
+        70.f,
+        0.3f,
+        0.9f,
+        0.1f
+    });
+
+    auto* ground { world.CreateBody({
+        { 400.f / PIXELS_PER_METER, (600.f - 16.f) / PIXELS_PER_METER },
+        0.f,
+        { 800.f / PIXELS_PER_METER, 32.f / PIXELS_PER_METER },
+        0.f,
+        0.3f,
+        0.0f,
+        0.0f
+    })};
+
     // Rect used for drawing, will use same rect for box and floor
     sf::RectangleShape rect;
     rect.setFillColor(sf::Color::White);
-    rect.setOrigin({box->halfSize.x * PIXELS_PER_METER, box->halfSize.y * PIXELS_PER_METER});
-    rect.setPosition({box->position.x * PIXELS_PER_METER, box->position.y * PIXELS_PER_METER});
-    rect.setSize({box->size.x * PIXELS_PER_METER, box->size.y * PIXELS_PER_METER});
-    rect.setRotation(sf::radians(box->orientation));
 
     sf::Clock dt;
 
@@ -88,9 +104,14 @@ int main(int argc, char** argv)
 
         // Draw code
         window.clear();
-        rect.setPosition({box->position.x * PIXELS_PER_METER, box->position.y * PIXELS_PER_METER});
-        rect.setRotation(sf::radians(box->orientation));
-        window.draw(rect);
+        for (auto const& body : world.Bodies())
+        {
+            rect.setOrigin({body->halfSize.x * PIXELS_PER_METER, body->halfSize.y * PIXELS_PER_METER});
+            rect.setPosition({body->position.x * PIXELS_PER_METER, body->position.y * PIXELS_PER_METER});
+            rect.setSize({body->size.x * PIXELS_PER_METER, body->size.y * PIXELS_PER_METER});
+            rect.setRotation(sf::radians(body->orientation));
+            window.draw(rect);
+        }
         window.display();
     }
 
