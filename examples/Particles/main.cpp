@@ -28,12 +28,15 @@ int main()
         {0.f, 9.8f}
     };
 
-    // Particle Emitter position
-    Math::Vector2 emitterPos { 400.f / PIXELS_PER_METER, 200.f / PIXELS_PER_METER };
+    std::array<Math::Vector2, 3> emitters {
+            Math::Vector2 { 400.f / PIXELS_PER_METER, 200.f / PIXELS_PER_METER },
+            Math::Vector2 { 250.f / PIXELS_PER_METER, 150.f / PIXELS_PER_METER },
+            Math::Vector2 { 550.f / PIXELS_PER_METER, 150.f / PIXELS_PER_METER }
+    };
 
     // Define config for all particles
     Particle::ParticleCfg cfg {
-        emitterPos,
+        {0, 0},
         .5f / PIXELS_PER_METER,
         10.f,
         0.9f,
@@ -60,19 +63,24 @@ int main()
             }
         }
 
+        for (auto const& emitter : emitters)
+        {
+            // Set position of config
+            cfg.pos = emitter;
+            for (uint32_t i {0}; i < 10; i++)
+            {
+                // Create a new particle
+                auto particle { world.CreateParticle(cfg) };
+
+                // Set random velocity
+                particle->SetVelocity({ dist(gen), dist(gen) });
+            }
+        }
+
         // Physics step
         if (dt.getElapsedTime().asSeconds() >= 1.f / 60.f)
         {
             world.Step(dt.restart().asSeconds());
-        }
-
-        for (uint32_t i {0}; i < 10; i++)
-        {
-            // Create a new particle
-            auto particle { world.CreateParticle(cfg) };
-
-            // Set random velocity
-            particle->SetVelocity({ dist(gen), dist(gen) });
         }
 
         // Draw all particles

@@ -22,9 +22,7 @@ namespace Slinky::Particle
 
     void ParticleWorld::DestroyParticle(Particle* _particle)
     {
-        particles.erase(
-                std::remove(particles.begin(), particles.end(), _particle),
-                particles.end());
+        return;
     }
 
     void ParticleWorld::Step(float _dt)
@@ -65,10 +63,10 @@ namespace Slinky::Particle
 
         for (auto const& [A, B] : pairs)
         {
-            float distanceSq {std::powf((B->Position().x - A->Position().x), 2) +
-                              std::powf((B->Position().y - A->Position().y), 2)};
+            float distanceSq {powf((B->Position().x - A->Position().x), 2) +
+                              powf((B->Position().y - A->Position().y), 2)};
 
-            if (float rSq{std::powf(A->Radius() + B->Radius(), 2)};
+            if (float rSq{powf(A->Radius() + B->Radius(), 2)};
                     rSq > distanceSq)
             {
                 auto& contact { contacts.emplace_back(new ParticleContact) };
@@ -102,10 +100,10 @@ namespace Slinky::Particle
 
                 // If the distance is less than the sum of radii,
                 // the particles are colliding
-                float distanceSq {std::powf((B->Position().x - A->Position().x), 2) +
-                                  std::powf((B->Position().y - A->Position().y), 2)};
+                float distanceSq {powf((B->Position().x - A->Position().x), 2) +
+                                  powf((B->Position().y - A->Position().y), 2)};
 
-                if (float rSq{std::powf(A->Radius() + B->Radius(), 2)};
+                if (float rSq{powf(A->Radius() + B->Radius(), 2)};
                     rSq > distanceSq)
                 {
                      auto& contact { contacts.emplace_back(new ParticleContact) };

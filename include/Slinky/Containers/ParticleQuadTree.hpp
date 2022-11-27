@@ -1,5 +1,6 @@
 
 #include <vector>
+#include <memory>
 
 #include "Slinky/Math/Vector2.hpp"
 #include "Slinky/Collision/AABB.hpp"

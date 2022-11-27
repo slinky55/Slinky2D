@@ -1,6 +1,7 @@
 #pragma once
 
 #include <vector>
+#include <memory>
 
 #include "Slinky/Dynamics/Body.hpp"
 #include "Slinky/Collision/AABB.hpp"

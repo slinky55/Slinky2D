@@ -110,8 +110,23 @@ namespace Slinky::Dynamics
 
             }
 
-            SolveImpulses(narrowList, _dt);
-            SolvePositionsSmooth(narrowList, _dt);
+            for (std::size_t itr {0}; itr < narrowList.size() * 2; itr++)
+            {
+                float max {0};
+                std::size_t maxI { narrowList.size() };
+                for (std::size_t i {0}; i < narrowList.size(); i++)
+                {
+                    float sepVelocity { Dynamics::SeparatingVelocity(narrowList[i].get()) };
+                    if (sepVelocity < max)
+                    {
+                        max = sepVelocity;
+                        maxI = i;
+                    }
+                }
+
+                SolveImpulse(narrowList[maxI].get());
+                SolvePositionSmooth(narrowList[maxI].get());
+            }
 
             for (auto const& body : m_bodies)
             {

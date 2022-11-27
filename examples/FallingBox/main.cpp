@@ -11,12 +11,6 @@ using namespace Slinky;
 
 int main(int argc, char** argv)
 {
-    if (argc != 2)
-    {
-        std::cout << "Usage: " << argv[0] << " <box count>\n";
-        return -1;
-    }
-
     // For random numbers
     std::random_device rd;
     std::mt19937 gen(rd());
@@ -35,30 +29,21 @@ int main(int argc, char** argv)
     // Create physics world
     Dynamics::DWorld world { {0, 9.81f} };
 
-    // Create physics box
-    auto* box { world.CreateBody({
-        { xRange(gen) / PIXELS_PER_METER,
-          yRange(gen) / PIXELS_PER_METER },
-        0.f,
-        { 32.f / PIXELS_PER_METER, 32.f / PIXELS_PER_METER },
-        70.f,
-        0.3f,
-        0.9f,
-        0.1f
-    })};
+    for (std::size_t i {0}; i < 100; i++)
+    {
+        world.CreateBody({
+            { xRange(gen) / PIXELS_PER_METER,
+            yRange(gen) / PIXELS_PER_METER },
+            0.f,
+            { 4 / PIXELS_PER_METER, 4 / PIXELS_PER_METER },
+            70.f,
+            0.3f,
+            0.9f,
+            0.1f
+        });
+    }
 
     world.CreateBody({
-        { box->position.x,
-          box->position.y - 2.f },
-        0.f,
-        { 32.f / PIXELS_PER_METER, 32.f / PIXELS_PER_METER },
-        70.f,
-        0.3f,
-        0.9f,
-        0.1f
-    });
-
-    auto* ground { world.CreateBody({
         { 400.f / PIXELS_PER_METER, (600.f - 16.f) / PIXELS_PER_METER },
         0.f,
         { 800.f / PIXELS_PER_METER, 32.f / PIXELS_PER_METER },
@@ -66,7 +51,7 @@ int main(int argc, char** argv)
         0.3f,
         0.0f,
         0.0f
-    })};
+    });
 
     // Rect used for drawing, will use same rect for box and floor
     sf::RectangleShape rect;
@@ -92,12 +77,6 @@ int main(int argc, char** argv)
         if (sf::Keyboard::isKeyPressed(sf::Keyboard::Escape))
         {
             window.close();
-        }
-
-        if (sf::Keyboard::isKeyPressed(sf::Keyboard::Space) && !spinning)
-        {
-            Dynamics::ApplyForceToPoint(box, {-1.f, 0.5f}, {20.f, 0.f});
-            spinning = true;
         }
 
         world.Step(dt.restart().asSeconds());

@@ -24,8 +24,8 @@ namespace Slinky::Collision
                                                                  const AABB& _B)
     {
         Math::Vector2 intersection {
-                (_A.hSize.x + _B.hSize.x) - std::fabsf(_A.center.x - _B.center.x),
-                (_A.hSize.y + _B.hSize.y) - std::fabsf(_A.center.y - _B.center.y)
+                (_A.hSize.x + _B.hSize.x) - std::fabs(_A.center.x - _B.center.x),
+                (_A.hSize.y + _B.hSize.y) - std::fabs(_A.center.y - _B.center.y)
         };
 
         if (intersection.x < 0.f ||
