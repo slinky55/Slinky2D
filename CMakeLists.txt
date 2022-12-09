@@ -71,4 +71,18 @@ target_link_libraries(
         ${PROJECT_NAME}
 )
 
+add_executable(VectorTest tests/VectorTest.cpp)
+target_link_libraries(
+        VectorTest
+        GTest::gtest_main
+        ${PROJECT_NAME}
+)
+
+add_executable(GJKTest tests/GJKTest.cpp)
+target_link_libraries(
+        GJKTest
+        GTest::gtest_main
+        ${PROJECT_NAME}
+)
+
 gtest_discover_tests(AABBTest)

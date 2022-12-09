@@ -73,7 +73,7 @@ namespace Slinky::Particle
                 contact->particles[0] = A;
                 contact->particles[1] = B;
                 contact->restitution = std::min(A->Restitution(), B->Restitution());
-                contact->normal = (A->Position() - B->Position()).Normal();
+                contact->normal = Math::Normal(A->Position() - B->Position());
                 contact->intersection = (rSq - distanceSq);
             }
         }
@@ -111,7 +111,7 @@ namespace Slinky::Particle
                      contact->particles[1] = B;
                      contact->restitution = std::min(A->Restitution(), B->Restitution());
                      contact->intersection = rSq - distanceSq;
-                     contact->normal = (B->Position() - A->Position()).Normal();
+                     contact->normal = Math::Normal(B->Position() - A->Position());
                 }
             }
         }

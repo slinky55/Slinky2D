@@ -5,9 +5,13 @@
 #include <algorithm>
 #include <iostream>
 #include <memory>
+#include <map>
+
+#include "Slinky/Math/Vector2.hpp"
+#include "Slinky/Math/Mat2.hpp"
 
 #include "Slinky/Dynamics/Body.hpp"
-#include "Slinky/Dynamics/BodyContact.hpp"
+#include "Slinky/Collision/BodyContact.hpp"
 
 #include "Slinky/Containers/BodyQuadTree.hpp"
 
@@ -15,9 +19,6 @@
 
 namespace Slinky::Dynamics
 {
-    using BroadPhaseList = std::vector<std::pair<Body*, Body*>>;
-    using NarrowPhaseList = std::vector<std::unique_ptr<BodyContact>>;
-
     class DWorld
     {
     public:
@@ -47,95 +48,40 @@ namespace Slinky::Dynamics
          */
         void Step(float _dt)
         {
-            Containers::BodyQuadTree tree {
-                    {{0.f, 0.f}, {800.f / 32.f, 600.f / 32.f}},
-                    0
-            };
+            // Get the list of collisions
+            BroadPhase();
 
+            // Integrate velocities
             for (auto const& body : m_bodies)
             {
-                ApplyForceToCM(body.get(), m_gravity * body->mass);
-                IntegrateBody(body.get(), _dt);
-
-                tree.Insert(body.get());
-            }
-
-            BroadPhaseList broadList;
-            tree.GetPairs(broadList);
-
-            NarrowPhaseList narrowList;
-            for (auto const& [A, B] : broadList)
-            {
-                if (auto intersection { Collision::AABBvsAABB(A->collider, B->collider) };
-                    intersection)
-                {
-
-                    auto const& contact { narrowList.emplace_back(std::make_unique<BodyContact>()) };
-
-                    contact->bodies[0] = A;
-                    contact->bodies[1] = B;
-
-                    if (intersection->x < intersection->y)
-                    {
-                        if (A->position.x < B->position.x)
-                        {
-                            contact->normal = {-1.f, 0.f};
-                        }
-                        else
-                        {
-                            contact->normal = {1.f, 0.f};
-                        }
-                        contact->intersection = intersection->x;
-                    }
-                    else if (intersection->x > intersection->y)
-                    {
-                        if (A->position.y < B->position.y)
-                        {
-                            contact->normal = {0.f, -1.f};
-                        }
-                        else
-                        {
-                            contact->normal = {0.f, 1.f};
-                        }
-                        contact->intersection = intersection->y;
-                    }
-                    else
-                    {
-                        contact->normal = intersection->Normal();
-                        contact->intersection = intersection->Magnitude();
-                    }
-
-                    contact->restitution = std::min(A->restitution, B->restitution);
-                }
-
-            }
-
-            for (std::size_t itr {0}; itr < narrowList.size() * 2; itr++)
-            {
-                float max {0};
-                std::size_t maxI { narrowList.size() };
-                for (std::size_t i {0}; i < narrowList.size(); i++)
-                {
-                    float sepVelocity { Dynamics::SeparatingVelocity(narrowList[i].get()) };
-                    if (sepVelocity < max)
-                    {
-                        max = sepVelocity;
-                        maxI = i;
-                    }
-                }
-
-                SolveImpulse(narrowList[maxI].get());
-                SolvePositionSmooth(narrowList[maxI].get());
-            }
-
-            for (auto const& body : m_bodies)
-            {
-                ClearForces(body.get());
+                if (body->invMass == 0) continue;
+                body->position += body->linearVelocity * _dt;
+                body->linearVelocity += (m_gravity + (body->forces * body->invMass)) * _dt;
             }
         }
     private:
         Math::Vector2 m_gravity;
 
         std::vector<std::unique_ptr<Body>> m_bodies;
+        std::vector<std::unique_ptr<BodyContact>> m_contacts;
+
+        std::map<ContactKey, std::unique_ptr<BodyContact>> m_contactMap;
+
+        void BroadPhase()
+        {
+            for (std::size_t i { 0 }; i < m_bodies.size(); ++i)
+            {
+                for (std::size_t j { i + 1 }; j < m_bodies.size(); ++j)
+                {
+                    if (m_bodies[i]->invMass == 0 && m_bodies[j]->invMass == 0) continue;
+
+                    if ( auto intersection { Collision::AABBvsAABB(m_bodies[i]->collider, m_bodies[j]->collider) };
+                         intersection )
+                    {
+                        m_contacts.emplace_back(std::make_unique<BodyContact>());
+                    }
+                }
+            }
+        }
     };
 }

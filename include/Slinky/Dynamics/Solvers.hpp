@@ -3,7 +3,7 @@
 #include <vector>
 #include <memory>
 
-#include "Slinky/Dynamics/BodyContact.hpp"
+#include "Slinky/Collision/BodyContact.hpp"
 
 namespace Slinky::Dynamics
 {
@@ -28,7 +28,7 @@ namespace Slinky::Dynamics
 
     inline void SolvePositionSmooth(BodyContact* contact)
     {
-        constexpr float slop { 0.01f };
+        constexpr float slop { 0.05f };
         constexpr float percent { 0.8f };
 
         Math::Vector2 correction {

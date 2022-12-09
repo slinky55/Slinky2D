@@ -4,11 +4,17 @@
 
 #include "Slinky/Dynamics/Body.hpp"
 
-namespace Slinky::Dynamics
+namespace Slinky::Collision
 {
+    struct ContactKey
+    {
+        Dynamics::Body* A;
+        Dynamics::Body* B;
+    };
+    
     struct BodyContact
     {
-        std::array<Body*, 2> bodies;
+        std::array<Dynamics::Body*, 2> bodies;
 
         float restitution;
         float intersection;

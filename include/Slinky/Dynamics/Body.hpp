@@ -67,7 +67,7 @@ namespace Slinky::Dynamics
 
     inline void ClearForces(Body* _body)
     {
-        _body->forces.Zero();
+        _body->forces = Math::ZERO;
     }
 
     inline void  IntegrateBody(Body* _body,

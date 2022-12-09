@@ -4,33 +4,90 @@
 
 namespace Slinky::Math
 {   
-    struct Vector2
-    {
-        float x {0};
-        float y {0};
+    struct Vector2 {
+        float x{0};
+        float y{0};
 
-        Vector2() = default;
-        Vector2(float _x,
-                float _y);
+        constexpr Vector2() noexcept = default;
 
-        [[nodiscard]] Vector2 operator+(const Vector2& _rhs) const;
-        [[nodiscard]] Vector2 operator-(const Vector2& _rhs) const;
-        [[nodiscard]] Vector2 operator*(float _rhs) const;
-        [[nodiscard]] Vector2 operator/(float _rhs) const;
+        constexpr Vector2(float _x,
+                          float _y) noexcept
+                :
+                x{_x},
+                y{_y} {}
 
-        // Scalar product
-        [[nodiscard]] float operator*(const Vector2& _rhs) const;
+        [[nodiscard]] constexpr Vector2 operator+(const Vector2 &_rhs) const {
+            return {x + _rhs.x, y + _rhs.y};
+        }
+        [[nodiscard]] constexpr Vector2 operator-(const Vector2 &_rhs) const {
+            return {x - _rhs.x, y - _rhs.y};
+        }
+        [[nodiscard]] constexpr Vector2 operator*(float _rhs) const {
+            return {x * _rhs, y * _rhs};
+        }
+        [[nodiscard]] constexpr Vector2 operator/(float _rhs) const {
+            return {x / _rhs, y / _rhs};
+        }
+        [[nodiscard]] constexpr Vector2 operator-() const {
+            return {-x, -y};
+        }
 
-        Vector2& operator+=(const Vector2& _rhs);
-        Vector2& operator-=(const Vector2& _rhs);
-        Vector2& operator*=(float _rhs);
-        Vector2& operator/=(float _rhs);
+        // dot product
+        [[nodiscard]] constexpr float operator*(const Vector2 &_rhs) const {
+            return x * _rhs.x + y * _rhs.y;
+        }
 
-        [[nodiscard]] float Magnitude() const;
-
-        [[nodiscard]] Vector2 Normal() const;
-        void Normalize();
-
-        void Zero();
+        constexpr Vector2 &operator+=(const Vector2 &_rhs) {
+            x += _rhs.x;
+            y += _rhs.y;
+            return *this;
+        }
+        constexpr Vector2 &operator-=(const Vector2 &_rhs) {
+            x -= _rhs.x;
+            y -= _rhs.y;
+            return *this;
+        }
+        constexpr Vector2 &operator*=(float _rhs) {
+            x *= _rhs;
+            y *= _rhs;
+            return *this;
+        }
+        constexpr Vector2 &operator/=(float _rhs)
+        {
+            x /= _rhs;
+            y /= _rhs;
+            return *this;
+        }
     };
+
+    inline float Magnitude(const Vector2& _vector)
+    {
+        return std::sqrt(_vector.x * _vector.x + _vector.y * _vector.y);
+    }
+    inline float MagnitudeSq(const Vector2& _vector)
+    {
+        return _vector.x * _vector.x + _vector.y * _vector.y;
+    }
+
+    inline Vector2 Normal(const Vector2& _vector)
+    {
+        return _vector / Magnitude(_vector);
+    }
+    inline void Normalize(Vector2& _vector)
+    {
+        _vector /= Magnitude(_vector);
+    }
+
+    inline float Cross(const Vector2& _a,
+                       const Vector2& _b)
+    {
+        return _a.x * _b.y - _a.y * _b.x;
+    }
+    inline Vector2 Cross(const Vector2& _a,
+                         float _scalar)
+    {
+        return Vector2(_scalar * _a.y, -_scalar * _a.x);
+    }
+
+    constexpr Vector2 ZERO {0, 0};
 }

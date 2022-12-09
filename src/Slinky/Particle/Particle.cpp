@@ -105,6 +105,6 @@ namespace Slinky::Particle
     }
     void Particle::ClearForces()
     {
-        forces.Zero();
+        forces = Math::ZERO;
     }
 }

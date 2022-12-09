@@ -1,6 +1,9 @@
 #pragma once
 
 #include <optional>
+#include <limits>
+
+#include "Slinky/Collision/Contact.hpp"
 
 #include "Slinky/Math/Vector2.hpp"
 
@@ -12,12 +15,6 @@ namespace Slinky::Collision
         Math::Vector2 hSize;
 
         AABB() = default;
-        AABB(const Math::Vector2& _center,
-             const Math::Vector2& _hSize)
-             :
-             center{_center},
-             hSize{_hSize}
-        {}
     };
 
     [[nodiscard]] inline std::optional<Math::Vector2> AABBvsAABB(const AABB& _A,
